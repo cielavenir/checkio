@@ -1,3 +1,4 @@
+'''
 def checkio(array):
 	if not len(array): return 0
 	m=array[-1]
@@ -5,6 +6,8 @@ def checkio(array):
 	for i,e in enumerate(array):
 		if i%2==0: r+=e
 	return r*m
+'''
+checkio=lambda a: 0 if len(a)==0 else sum(a[0::2])*a[-1]
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':

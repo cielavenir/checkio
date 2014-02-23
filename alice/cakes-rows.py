@@ -7,9 +7,9 @@ def solve(points):
 	num=0
 	for e in combinations(list(range(len(points))),3):
 		if cross(points[e[1]]-points[e[0]],points[e[2]]-points[e[0]])==0:
-			a=(e[0]<<16)|e[1]
-			b=(e[0]<<16)|e[2]
-			c=(e[1]<<16)|e[2]
+			a=(e[0],e[1])
+			b=(e[0],e[2])
+			c=(e[1],e[2])
 			entry=None
 			if a in h: entry=h[a]
 			if b in h: entry=h[b]

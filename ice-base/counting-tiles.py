@@ -3,12 +3,12 @@ def checkio(radius):
 	h={}
 	for i in range(r):
 		for j in range(r):
-			if i**2+j**2<radius**2: h[i<<16|j]=1
+			if i**2+j**2<radius**2: h[(i,j)]=1
 	x=y=0
 	for i in range(r):
 		for j in range(r):
-			if i<<16|j in h:
-				if (i+1)<<16|j in h and i<<16|(j+1) in h and (i+1)<<16|(j+1) in h: x+=1
+			if (i,j) in h:
+				if (i+1,j) in h and (i,j+1) in h and (i+1,j+1) in h: x+=1
 				else: y+=1
 	return [x*4, y*4]
 
