@@ -14,7 +14,7 @@ diff=lambda t,s: sum(t[i]!=s[i] for i in range(len(t)))
 def checkio(image):
 	matrix=[[image[y][x*4+1:x*4+4] for x in range(len(image[y])//4)] for y in range(len(image))]
 	tr=[list(e) for e in zip(*matrix)]
-	joined=[''.join([''.join([str(g) for g in f]) for f in e]) for e in tr]
+	joined=[''.join(''.join(str(g) for g in f) for f in e) for e in tr]
 	r=''
 	for e in joined:
 		for i,f in enumerate(font_joined):

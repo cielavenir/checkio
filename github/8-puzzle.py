@@ -46,7 +46,7 @@ while len(q)>0:
 		v[coor],v[coor+X]=v[coor+X],v[coor]
 
 def checkio(data):
-	s=''.join([''.join([str(f) for f in e]) for e in data])
+	s=''.join(''.join(str(f) for f in e) for e in data)
 	r=''
 	while prev[s][1]:
 		r+=prev[s][1]

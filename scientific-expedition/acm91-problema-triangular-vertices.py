@@ -51,6 +51,6 @@ if __name__ == "__main__":
 	try:
 		while True:
 			a=[int(e) for e in raw_input().split()]
-			print(' '.join([str(e) for e in a])+m[checkio(a)])
+			print(' '.join(str(e) for e in a)+m[checkio(a)])
 	except EOFError:
 		pass
