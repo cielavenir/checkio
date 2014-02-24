@@ -15,7 +15,7 @@ def checkio(first, second, goal):
 			('21',(x[0]+min(first-x[0],x[1]),x[1]-min(first-x[0],x[1]))),
 		]
 		for e in a:
-			if e[1][0]<=first and e[1][1]<=second and e[1] not in back:
+			if e[1] not in back:
 				back[e[1]]=x
 				back_perform[e[1]]=e[0]
 				q.append(e[1])

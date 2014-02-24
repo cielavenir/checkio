@@ -22,7 +22,7 @@ def checkio(attempts):
 	#irb> (0..100).map{|e|[e%2,e%3,e%5,e%7]}
 	a=[[e%2,e%3,e%5,e%7] for e in range(101)]
 	for index, item in enumerate(a):
-		if item[0]==attempts[1][0] and item[1]==attempts[2][0] and item[2]==attempts[3][0] and item[3]==attempts[4][0]:
+		if item==result:
 			return 9,index
 	#This "9" is just dummy.
 '''
