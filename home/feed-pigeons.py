@@ -1,6 +1,7 @@
+import itertools
 def checkio(number):
 	pigeon=0
-	for i in range(1,1000):
+	for i in itertools.count(1):
 		pigeon+=i
 		if number<pigeon:
 			return max(number,pigeon-i)

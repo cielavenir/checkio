@@ -1,12 +1,30 @@
-x=[[0,0],[0,0]]
-for i in range(500):
-	for j in range(1,i*2+1): x.append([-i,-i+j])
-	for j in range(1,i*2+1): x.append([-i+j,i])
-	for j in range(1,i*2+1): x.append([i,i-j])
-	for j in range(1,i*2+1): x.append([i-j,-i])
+def convert(n):
+	if n<1: return None
+	if n==1: return [0,0]
+	n-=2
+	d=1
+	s=8
+	while s<=n:
+		d+=1
+		s+=d*8
+	s-=d*8
+	n-=s
+	base=[-d,-d+1]
+	for i in range(n):
+		if i+1<d*2:
+			base[1]+=1
+		elif i+1<d*4:
+			base[0]+=1
+		elif i+1<d*6:
+			base[1]-=1
+		else:
+			base[0]-=1
+	return base
+
 def checkio(data):
-	a, b = data
-	return abs(x[a][0]-x[b][0])+abs(x[a][1]-x[b][1])
+	a=convert(data[0])
+	b=convert(data[1])
+	return abs(a[0]-b[0])+abs(a[1]-b[1])
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':

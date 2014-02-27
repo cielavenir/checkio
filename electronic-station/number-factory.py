@@ -1,10 +1,13 @@
-from functools import reduce
-
 def checkio(data):
-	for i in range(999999):
-		n=reduce(lambda x,y: x*y,[int(e) for e in str(i)])
-		if n==data: return i
-	return 0
+	if data<1: return 0
+	if data==1: return 1
+	r=[]
+	for i in range(9,1,-1):
+		while data%i==0:
+			r.append(str(i))
+			data//=i
+	if data>1: return 0
+	return int(''.join(reversed(r)))
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':

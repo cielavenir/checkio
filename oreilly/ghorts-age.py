@@ -1,10 +1,11 @@
 a=[1,2]
+h={1:1,2:1}
 for i in range(2,1000):
-	a.append(a[i-1]+a[i-2])
-h={}
-for e in a: h[e]=1
+	n=a[i-1]+a[i-2]
+	a.append(n)
+	h[n]=1
 z=[10000]
-for i in range(1,6000):
+for i in range(1,5001):
 	z.append(z[i-1]+(-i if i in h else 1))
 
 def checkio(opacity):

@@ -1,4 +1,5 @@
 def convert(n):
+	if n<1: return None
 	if n==1: return [0,0,0]
 	n-=2
 	d=1
