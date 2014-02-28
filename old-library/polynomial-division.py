@@ -53,17 +53,26 @@ def format(a):
 			else: s=str(e)+'*'
 			r.append(s+'*'.join(['x']*i))
 	ret=''.join(reversed(r))
-	return ret[1:] if ret[0]=='+' else ret
+	return ret[1:] if len(ret)>0 and ret[0]=='+' else ret
 
-def checkio(s):
-	s=re.sub(r'-','Z',s)
-	s=re.sub(r'x','0,1',s)
-	return format([int(_) for _ in process(s).split(',')])
+def checkio(a):
+	b=[]
+	for s in a:
+		s=re.sub(r'-','Z',s)
+		s=re.sub(r'x','0,1',s)
+		b.append([int(_) for _ in process(s).split(',')])
+	c=[]
+	while len(b[1])<=len(b[0]): #bah
+		d=b[0][-1]//b[1][-1] #bah
+		c.append(d)
+		b[0]=sub(b[0],[0]*(len(b[0])-len(b[1]))+[e*d for e in b[1]])
+		assert b[0][-1]==0
+		b[0].pop()
+	return [format(e) for e in [list(reversed(c)),b[0]]]
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
-if __name__ == "__main__":
-	assert checkio("(x-1)*(x+1)") == "x*x-1", "First and simple"
-	assert checkio("(x+1)*(x+1)") == "x*x+2*x+1", "Almost the same"
-	assert checkio("(x+3)*x*2-x*x") == "x*x+6*x", "Different operations"
-	assert checkio("x+x*x+x*x*x") == "x*x*x+x*x+x", "Don't forget about order"
-	assert checkio("(2*x+3)*2-x+x*x*x*x") == "x*x*x*x+3*x+6", "All together"
+if __name__ == '__main__':
+	assert checkio(['x*x*x-12*x*x-42', 'x-3']) == ['x*x-9*x-27', '-123'], "1st"
+	assert checkio(['x*x-1', 'x+1']) == ['x-1', ''], "2nd"
+	assert checkio(['x*x*x+6*x*x+12*x+8', 'x+2']) == ['x*x+4*x+4', ''], "3rd"
+	assert checkio(['x*x*x*x*x+5*x+1', 'x*x']) == ['x*x*x', '5*x+1'], "4th"
