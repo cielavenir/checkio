@@ -1,10 +1,6 @@
-first=True
 _d=[(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]
 def checkio(field):
-	global first
-	if first:
-		first=False
-		return [False,0,0]
+	if field[0][0]==-1: return [False,0,0]
 	for y in range(len(field)):
 		for x in range(len(field[0])):
 			if 1<=field[y][x]<=8:
@@ -43,8 +39,6 @@ if __name__ == '__main__':
 						opened.append((k, l))
 		return input_map
 	def check_solution(func, mine_map):
-		global first
-		first=True
 		input_map = [[-1] * 10 for _ in range(10)]
 		while True:
 			is_mine, row, col = func([row[:] for row in input_map])  # using copy
