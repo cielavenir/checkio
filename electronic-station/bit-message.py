@@ -1,7 +1,7 @@
 #coding:utf-8
 from struct import pack
 import sys
-month=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+month=('','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
 
 def checkio(_data):
 	data=[int(_data[i*2:i*2+2],16) for i in range(len(_data)//2)]

@@ -15,11 +15,11 @@ def gauss(a):
 
 def checkio(matrix):
 	tr=[list(e) for e in zip(*matrix)]
-	a=[0,225,315]
+	a=(0,225,315)
 	for i in range(-2,3):
 		for j in range(-2,3):
 			for k in range(-2,3):
-				x=[tr[z]+[a[z]+[i,j,k][z]*360] for z in range(len(a))]
+				x=[tr[z]+[a[z]+(i,j,k)[z]*360] for z in range(len(a))]
 				result=list(zip(*gauss(x)))[-1]
 				if any(not -180<=e<=180 or e.denominator>1 for e in result): continue
 				return [int(e) for e in result]

@@ -11,16 +11,16 @@ def checkio(numbers):
 	l=numbers.pop()
 	if f==l: return [int(f),int(l)]
 	h={f:None}
-	q=[[f,0]]
+	q=[(f,0)]
 	while len(q)>0:
 		x,y=q.pop(0)
 		if diff1(x,l):
-			q.append([l,y+1])
+			q.append((l,y+1))
 			h[l]=x
 			break
 		for e in numbers:
 			if e not in h and diff1(x,e):
-				q.append([e,y+1])
+				q.append((e,y+1))
 				h[e]=x
 	if len(q)==0: return []
 	a=[l]

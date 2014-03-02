@@ -14,7 +14,7 @@ def _isRightTurn(a):
 		return 0
 
 def checkio(P):
-	points=[[e,i] for i,e in enumerate(P)]
+	points=[(e,i) for i,e in enumerate(P)]
 	points.sort()
 	# Build upper half of the hull.
 	upper = [points[0], points[1]]

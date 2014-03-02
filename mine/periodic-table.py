@@ -13,10 +13,10 @@ Fr	Ra	Ac	Th	Pa	U	Np	Pu	Am	Cm	Bk	Cf	Es	Fm	Md	No	Lr
 Rf	Db	Sg	Bh	Hs	Mt	Ds	Rg	Cn	Uut	Fl	Uup	Lv	Uus	Uuo
 '''.split()
 
-orbital=['s','p','d','f','g','h','i']
+orbital=('s','p','d','f','g','h','i')
 
 def superscript(n):
-	return ''.join(pack('H',[0x2070,0xb9,0xb2,0xb3,0x2074,0x2075,0x2076,0x2077,0x2078,0x2079][int(e)]).decode('utf-16') for e in str(n))
+	return ''.join(pack('H',(0x2070,0xb9,0xb2,0xb3,0x2074,0x2075,0x2076,0x2077,0x2078,0x2079)[int(e)]).decode('utf-16') for e in str(n))
 
 def checkio(element):
 	#unusual elements
