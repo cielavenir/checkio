@@ -1,5 +1,4 @@
 def bfs(data,s,g,dcur):
-	D='URDL'
 	back={s:None}
 	backstr={}
 	q=[s]
