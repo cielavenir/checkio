@@ -1,17 +1,14 @@
 from itertools import permutations
 
+def dfs(z,a,b,d,s):
+	if d==5: return s if b[1]==a[0] else 0
+	return max([0]+[dfs(z,a,c,d+1,s+c[2]) for c in permutations(z[d]) if b[1]==c[0]])
+
 def checkio(chips):
 	r=0
 	for z in permutations(chips[1:]):
 		for a in permutations(chips[0]):
-			for b in permutations(z[0]):
-				for c in permutations(z[1]):
-					for d in permutations(z[2]):
-						for e in permutations(z[3]):
-							for f in permutations(z[4]):
-								x=[a,b,c,d,e,f,a]
-								if all(x[i][1]==x[i+1][0] for i in range(6)):
-									r=max(r,sum(x[i][2] for i in range(6)))
+			r=max(r,dfs(z,a,a,0,a[2]))
 	return r
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
