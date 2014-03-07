@@ -7,7 +7,7 @@ def checkio(num,data):
 	se=[]
 	for l,r in data:
 		ret_idx+=1
-		right_idx=bisect.bisect_left(se,[l,0]) #l <= se[right_idx][0]
+		right_idx=bisect.bisect_left(se,(l,0)) #l <= se[right_idx][0]
 		if right_idx!=0:
 			left_idx=right_idx-1
 			if l<=se[left_idx][1]: # overlap with left
@@ -21,7 +21,7 @@ def checkio(num,data):
 			result-=se[right_idx][1]-se[right_idx][0]+1
 			se.pop(right_idx)
 		result+=r-l+1
-		se.insert(right_idx,[l,r])
+		se.insert(right_idx,(l,r))
 		if num<=result: return ret_idx
 	return -1
 
