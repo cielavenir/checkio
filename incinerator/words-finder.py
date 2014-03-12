@@ -3,12 +3,13 @@ def checkio(text, words):
 	se=[]
 	lower=text.lower()
 	for e in words.lower().split():
-		r=-1
+		l_orig=-1
 		while True:
 			try:
-				l=r+1+lower[r+1:].index(e)
+				l_orig=l_orig+1+lower[l_orig+1:].index(e)
 			except ValueError:
 				break
+			l=l_orig
 			r=l+len(e)-1
 			#perform "range problem (painting wall)"
 			right_idx=bisect.bisect_left(se,(l,0)) #l <= se[right_idx][0]
