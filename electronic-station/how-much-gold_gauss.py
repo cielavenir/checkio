@@ -1,10 +1,13 @@
 from fractions import Fraction
-import random
 def gauss(a):
 	if not a or len(a)==0: return None
 	n=len(a)
 	for i in range(n):
-		while a[0][0]!=1 or a[i][i]==0: random.shuffle(a) # lol
+		if a[i][i]==0:
+			for j in range(i+1,n):
+				if a[j][i]!=0:
+					for k in range(i,n+1): a[i][k]+=a[j][k]
+					break
 		for j in range(n):
 			if i!=j:
 				r = Fraction(a[j][i],1) / a[i][i]
