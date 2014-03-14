@@ -16,8 +16,9 @@ def checkio(data):
 	c2=x1*x1-x3*x3+y1*y1-y3*y3
 	x=(b1*c2-b2*c1)/(a1*b2-a2*b1)
 	y=(c1*a2-c2*a1)/(a1*b2-a2*b1)
-	s='(x-%s)^2+(y-%s)^2=%s^2'%(str(round(x,2)),str(round(y,2)),str(round(math.hypot(x1-x,y1-y),2)))
-	return re.sub(r'.0([^0-9])',r'\1',s)
+	#s='(x-%s)^2+(y-%s)^2=%s^2'%(str(round(x,2)),str(round(y,2)),str(round(math.hypot(x1-x,y1-y),2)))
+	#return re.sub(r'\.0([^0-9])',r'\1',s) # aww I forgot this escape in first solution!
+	return '(x-%s)^2+(y-%s)^2=%s^2'%(str(round(x,2)).rstrip('.0'),str(round(y,2)).rstrip('.0'),str(round(math.hypot(x1-x,y1-y),2)).rstrip('.0'))
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
