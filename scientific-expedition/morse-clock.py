@@ -1,9 +1,19 @@
+'''
 def checkio(data):
 	x=('..','.-','-.','--')
 	y=('...','..-','.-.','.--','-..','-.-','--.','---')
 	z=('....','...-','..-.','..--','.-..','.-.-','.--.','.---','-...','-..-')
 	a=[int(e) for e in data.split(':')]
 	return x[a[0]//10]+' '+z[a[0]%10]+' : '+y[a[1]//10]+' '+z[a[1]%10]+' : '+y[a[2]//10]+' '+z[a[2]%10]
+'''
+
+#if sys.version_info[0]>=3:
+if 'maketrans' in str.__dict__:
+	maketrans=str.maketrans
+else:
+	from string import maketrans
+
+checkio=lambda data: ' : '.join('{:03b} {:04b}'.format(int(e)//10,int(e)%10) for e in data.split(':'))[1:].translate(maketrans('01', '.-'))
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
