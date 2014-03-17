@@ -52,6 +52,7 @@ def format(a):
 			elif e>0: s='+'+str(e)+'*'
 			else: s=str(e)+'*'
 			r.append(s+'*'.join(['x']*i))
+	if len(r)==0: r=['0']
 	ret=''.join(reversed(r))
 	return ret[1:] if ret[0]=='+' else ret
 
@@ -67,3 +68,4 @@ if __name__ == "__main__":
 	assert checkio("(x+3)*x*2-x*x") == "x*x+6*x", "Different operations"
 	assert checkio("x+x*x+x*x*x") == "x*x*x+x*x+x", "Don't forget about order"
 	assert checkio("(2*x+3)*2-x+x*x*x*x") == "x*x*x*x+3*x+6", "All together"
+	assert checkio("x-x") == "0", "zero"

@@ -52,6 +52,7 @@ def format(a):
 			elif e>0: s='+'+str(e)+'*'
 			else: s=str(e)+'*'
 			r.append(s+'*'.join(['x']*i))
+	#if len(r)==0: r=['0']
 	ret=''.join(reversed(r))
 	return ret[1:] if len(ret)>0 and ret[0]=='+' else ret
 
