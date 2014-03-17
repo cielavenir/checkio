@@ -1,4 +1,4 @@
-checkio=lambda numbers_array: sorted(numbers_array,key=lambda e: abs(e))
+checkio=lambda numbers_array: sorted(numbers_array,key=abs)
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':

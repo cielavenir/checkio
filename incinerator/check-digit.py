@@ -1,5 +1,5 @@
 from functools import reduce
-import re
+import re,operator
 
 def checkio(data):
 	t=re.sub(r'[^0-9A-Z]','',data[::-1])
@@ -7,7 +7,7 @@ def checkio(data):
 	for i,e in enumerate(t):
 		if e.isupper(): e=ord(e)-48
 		else: e=int(e)
-		s += e if i%2==1 else reduce(lambda x,y:x+y, [int(f) for f in str(e*2)])
+		s += e if i%2==1 else reduce(operator.add, [int(f) for f in str(e*2)])
 	return [str(10-((s-1)%10+1)),s]
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
