@@ -1,6 +1,7 @@
-from functools import reduce
-import operator
-checkio=lambda data: reduce(operator.add,data)
+#from functools import reduce
+#import operator
+#checkio=lambda data: reduce(operator.add,data)
+checkio=sum
 
 if __name__ == '__main__':
 	assert checkio([5, 5]) == 10, 'First'
