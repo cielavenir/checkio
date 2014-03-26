@@ -1,11 +1,10 @@
 def friendly_number(number,base=1000,decimals=0,suffix='',powers=['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']):
 	power=0
 	number=float(number)
-	while number>=base and power+1<len(powers):
+	while abs(number)>=base and power+1<len(powers):
 		number/=base
 		power+=1
-	print(number)
-	return '%.*f'%(decimals,number)+powers[power]+suffix
+	return ('%.*f'%(decimals,number) if decimals>0 else str(int(number)))+powers[power]+suffix
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
