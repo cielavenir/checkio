@@ -4,7 +4,8 @@ def friendly_number(number,base=1000,decimals=0,suffix='',powers=['', 'k', 'M', 
 	while abs(number)>=base and power+1<len(powers):
 		number/=base
 		power+=1
-	return ('%.*f'%(decimals,number) if decimals>0 else str(int(number)))+powers[power]+suffix
+	if decimals==0: number=int(number)
+	return '%.*f'%(decimals,number)+powers[power]+suffix
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
