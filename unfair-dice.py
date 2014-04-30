@@ -7,7 +7,6 @@ def checkio(enemy):
 	result=sum(sum(int(player[i]>enemy[j])-int(player[i]<enemy[j]) for j in range(l)) for i in range(l))
 	return [] if result<=0 else player
 
-#These "asserts" are only used for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	def test_dice(enemy):
 		player = sorted(checkio(enemy))
