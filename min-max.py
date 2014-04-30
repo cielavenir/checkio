@@ -13,7 +13,11 @@ def min2(cur,ite,key):
 		return min2(nxt if key(nxt)<key(cur) else cur,ite,key=key)
 	except StopIteration:
 		return cur
-def min(*args,key=lambda x:x):
+def min(*args,**kwargs):
+	try:
+		key=kwargs['key']
+	except KeyError:
+		key=lambda x:x
 	ite=iter(args[0]) if len(args)==1 and iterable(args[0]) else iter(args)
 	return min2(next(ite),ite,key=key)
 def max2(cur,ite,key):
@@ -22,7 +26,11 @@ def max2(cur,ite,key):
 		return max2(nxt if key(nxt)>key(cur) else cur,ite,key=key)
 	except StopIteration:
 		return cur
-def max(*args,key=lambda x:x):
+def max(*args,**kwargs):
+	try:
+		key=kwargs['key']
+	except KeyError:
+		key=lambda x:x
 	ite=iter(args[0]) if len(args)==1 and iterable(args[0]) else iter(args)
 	return max2(next(ite),ite,key=key)
 
