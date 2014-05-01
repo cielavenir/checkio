@@ -14,12 +14,8 @@ def min2(cur,ite,key):
 	except StopIteration:
 		return cur
 def min(*args,**kwargs):
-	try:
-		key=kwargs['key']
-	except KeyError:
-		key=lambda x:x
 	ite=iter(args[0]) if len(args)==1 and iterable(args[0]) else iter(args)
-	return min2(next(ite),ite,key=key)
+	return min2(next(ite),ite,key=kwargs.get('key',lambda x:x))
 def max2(cur,ite,key):
 	try:
 		nxt=next(ite)
@@ -27,12 +23,8 @@ def max2(cur,ite,key):
 	except StopIteration:
 		return cur
 def max(*args,**kwargs):
-	try:
-		key=kwargs['key']
-	except KeyError:
-		key=lambda x:x
 	ite=iter(args[0]) if len(args)==1 and iterable(args[0]) else iter(args)
-	return max2(next(ite),ite,key=key)
+	return max2(next(ite),ite,key=kwargs.get('key',lambda x:x))
 
 if __name__ == '__main__':
     assert max(3, 2) == 3, "Simple case max"
