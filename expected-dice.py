@@ -14,7 +14,6 @@ def checkio(n, s, t, b):
 	return _s*1.0/_t
 
 if __name__ == '__main__':
-	#These are only used for self-checking and are not necessary for auto-testing
 	def almost_equal(checked, correct, significant_digits=1):
 		precision = 0.1 ** significant_digits
 		return correct - precision < checked < correct + precision

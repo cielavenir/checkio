@@ -2,13 +2,13 @@
 def checkio(n, s, t):
 	a=[0]*(s*(n+1)+1)
 	for i in range(1,s+1):
-		a[i+s]=1
+		a[i+s]=1.0/s**n
 	for e in range(n-1):
 		for i in reversed(range(0,s*n+1)):
 			a[i+s]=sum(a[i:i+s])
 	#r=sum(1<=t-sum(a)<=s for a in itertools.product(list(range(1,s+1)),repeat=n-1))
 	try:
-		return a[t+s]*1.0/s**n
+		return a[t+s]
 	except IndexError:
 		return 0
 
