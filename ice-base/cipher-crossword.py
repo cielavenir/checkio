@@ -25,17 +25,16 @@ def checkio(crossword, words):
 		a[4][3]=e[2][3]
 		a[4][4]=e[2][4]
 		h={}
-		try:
-			for y in range(5):
-				for x in range(5):
-					if y not in [1,3] and x not in [1,3]:
-						if crossword[y][x] not in h:
-							h[crossword[y][x]]=a[y][x]
-						elif h[crossword[y][x]]!=a[y][x]:
-							raise Exception
-			return a
-		except Exception:
-			pass
+		for y in range(5):
+			for x in range(5):
+				if y not in [1,3] and x not in [1,3]:
+					if crossword[y][x] not in h:
+						h[crossword[y][x]]=a[y][x]
+					elif h[crossword[y][x]]!=a[y][x]:
+						break
+			else: continue
+			break
+		else: return a
 	return None
 
 if __name__ == '__main__':

@@ -2,18 +2,17 @@ import itertools
 def checkio(data):
 	result=sorted(list(set(''.join(data))))
 	while True:
-		try:
-			for _e in data:
-				for e,f in itertools.combinations(_e,2):
-					idx1=result.index(e)
-					idx2=result.index(f)
-					if idx1>idx2:
-						#result=result[0:idx2]+[result[idx1]]+result[idx2:idx1]+result[idx1+1:]
-						result[idx1],result[idx2]=result[idx2],result[idx1]
-						raise Exception
-		except Exception:
-			continue
-		break
+		for _e in data:
+			for e,f in itertools.combinations(_e,2):
+				idx1=result.index(e)
+				idx2=result.index(f)
+				if idx1>idx2:
+					#result=result[0:idx2]+[result[idx1]]+result[idx2:idx1]+result[idx1+1:]
+					result[idx1],result[idx2]=result[idx2],result[idx1]
+					break
+			else: continue
+			break
+		else: break
 	return ''.join(result)
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
