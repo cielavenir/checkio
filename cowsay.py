@@ -1,8 +1,11 @@
-def checkio(str):
+def cow_say(str):
 	line=''
 	length=-1
 	lines=[]
-	for e in str.split():
+	a=str.split()
+	if str[0]==' ': a=['']+a
+	if str[-1]==' ': a.append('')
+	for e in a:
 		if length+1+len(e)>39:
 			lines.append(line)
 			line=''
@@ -57,10 +60,10 @@ if __name__ == '__main__':
                 ||----w |
                 ||     ||
 '''
-	cowsay_one_line =  checkio('Checkio rulezz')
+	cowsay_one_line = cow_say('Checkio rulezz')
 	assert cowsay_one_line == expected_cowsay_one_line, 'Wrong answer:\n%s' % cowsay_one_line
-	cowsay_two_lines =  checkio('A longtextwithonlyonespacetofittwolines.')
+	cowsay_two_lines = cow_say('A longtextwithonlyonespacetofittwolines.')
 	assert cowsay_two_lines == expected_cowsay_two_lines, 'Wrong answer:\n%s' % cowsay_two_lines
-	cowsay_many_lines = checkio('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do '
+	cowsay_many_lines = cow_say('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do '
 		'eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 	assert cowsay_many_lines == expected_cowsay_many_lines, 'Wrong answer:\n%s' % cowsay_many_lines
