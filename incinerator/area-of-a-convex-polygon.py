@@ -12,7 +12,6 @@ def checkio(a):
 	else: t+=abs(x)/2.0
 	return abs(s-t)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([[1, 1], [9, 9], [9, 1]]) == 32, "The half of the square"
 	assert checkio([[4, 10], [7, 1], [1, 4]]) == 22.5, "Triangle"

@@ -17,7 +17,6 @@ def checkio(data):
 				r=max(r,M*(k-j+1))
 	return r
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(['G']) == 1, 'One cell - one variant'
 	assert checkio(['GS',

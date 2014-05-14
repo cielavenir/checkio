@@ -15,7 +15,6 @@ def checkio(data):
 			if grille[j][len(grille)-1-i]=='X': r+=template[i][j]
 	return r
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([
 		['X...',

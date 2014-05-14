@@ -45,7 +45,6 @@ def checkio(field_map):
 	if zero[0]-one[0]==1: dcur=1
 	return bfs(field_map,zero,cherry,dcur)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	print(checkio([
 		".T.....T..",

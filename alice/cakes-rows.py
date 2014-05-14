@@ -23,7 +23,6 @@ def solve(points):
 
 checkio=lambda data: solve([complex(*e) for e in data])
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([[3, 3], [5, 5], [8, 8], [2, 8], [8, 2]]) == 2
 	assert checkio(

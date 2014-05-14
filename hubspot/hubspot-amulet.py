@@ -29,7 +29,6 @@ def checkio(matrix):
 				if any(not -180<=e<=180 or e.denominator>1 for e in result): continue
 				return [int(e) for e in result]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	print(checkio([
 		[1, 2, 3],

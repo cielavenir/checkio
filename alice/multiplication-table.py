@@ -15,7 +15,6 @@ def checkio(first, second):
 		r+=second^(n if (first>>i)&1 else 0)
 	return r
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(4, 6) == 38
 	assert checkio(2, 7) == 28

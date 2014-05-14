@@ -14,7 +14,6 @@ def crosspoint(s0,s1,l0,l1):
 
 checkio=lambda data: crosspoint(*[complex(*e) for e in data])
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([[0, 0], [0, 2], [5, 1], [3, 1]]) == True, "1st example"
 	assert checkio([[0, 0], [0, 2], [3, 1], [5, 1]]) == False, "2nd example"

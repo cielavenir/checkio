@@ -6,7 +6,6 @@ def checkio(number):
 		number//=10
 	return r
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(123456) == 3, '1st example'
 	assert checkio(111111) == 0, '2nd example'

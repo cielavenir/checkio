@@ -34,7 +34,6 @@ def checkio(str):
 	return ','.join(reversed(r))
 
 if __name__ == '__main__':
-	#This part is using only for self-checking and not necessary for auto-testing
 	GOOD_ACTIONS = ("12", "10", "01", "02", "20", "21")
 	def check_solution(func, anagrams, min_length):
 		start, end = anagrams.split("-")

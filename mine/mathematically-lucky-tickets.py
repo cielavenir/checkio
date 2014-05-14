@@ -11,7 +11,6 @@ def dfs(s):
 
 checkio=lambda s: all(e!=100 for e in dfs(s))
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio('000000') == True, "All zeros"
 	assert checkio('707409') == True, "You can not transform it to 100"

@@ -3,7 +3,6 @@ def checkio(data):
 	if len(a)%2==1: return a[len(a)//2]
 	return (a[len(a)//2]+a[len(a)//2-1])/2.0
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([1, 2, 3, 4, 5]) == 3, "Sorted list"
 	assert checkio([3, 1, 2, 5, 3]) == 3, "Not sorted list"

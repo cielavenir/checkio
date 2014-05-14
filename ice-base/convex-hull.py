@@ -35,7 +35,6 @@ def checkio(P):
 	# Concatenate both halfs and return.
 	return [i for e,i in upper+lower]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(
 		[[7, 6], [8, 4], [7, 2], [3, 2], [1, 6], [1, 8], [4, 9]]

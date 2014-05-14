@@ -26,7 +26,6 @@ def checkio(first, second, goal):
 		x=back[x]
 	return list(reversed(r))
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	print(checkio(5, 7, 6))	# ['02', '21', '10', '21', '02', '21', '10', '21', '02', '21']
 	print(checkio(3, 4, 1))	# ["02", "21"]

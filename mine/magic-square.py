@@ -42,7 +42,6 @@ def checkio(data):
 			h[data[y][x]]=1
 	return dfs(data,h,0)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	print(checkio([
 		[2, 7, 6],

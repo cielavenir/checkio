@@ -18,7 +18,6 @@ def checkio(data):
 	end=int(start+diff*d2/(d1+d2))
 	return '%02d:%02d:%02d'%(end//3600,end//60%60,end%60)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == "__main__":
 	assert checkio(['00:00:00', '00:00:15', '+5 seconds at 10 seconds']) == '00:00:10', 'First example'
 	assert checkio(['06:10:00', '06:10:15', '-5 seconds at 10 seconds']) == '06:10:30', 'Second example'

@@ -11,7 +11,6 @@ def checkio(number):
 		start+=1
 	return []
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(64) == [15, 21, 28], "1st example"
 	assert checkio(371) == [36, 45, 55, 66, 78, 91], "1st example"

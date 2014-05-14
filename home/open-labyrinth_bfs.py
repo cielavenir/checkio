@@ -19,7 +19,6 @@ def checkio(data):
 		g=back[g]
 	return r[::-1]
 
-#This code using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	print(checkio([
 		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],

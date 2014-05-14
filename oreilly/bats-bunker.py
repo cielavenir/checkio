@@ -57,7 +57,6 @@ def checkio(_map):
 				graph[bats[j]].append(bats[i])
 	return bfs(graph,complex(1,1),alpha)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	'''
 	assert checkio([

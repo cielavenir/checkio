@@ -59,7 +59,6 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
 		raise ValueError("Wrong string")
 
 if __name__ == "__main__":
-	#These "asserts" using only for self-checking and not necessary for auto-testing
 	assert parse_array("[1, 2, 3]") == [1, 2, 3], "Simple"
 	assert parse_array("[[1], 2, 3]") == [[1], 2, 3], "Nested"
 	assert parse_array("[-3, [-2, 0], 10]") == [-3, [-2, 0], 10], "Negative integers"

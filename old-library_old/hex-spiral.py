@@ -37,7 +37,6 @@ def checkio(data):
 	#http://www.redblobgames.com/grids/hexagons/#distances
 	return max(abs(a[0]-b[0]), abs(a[1]-b[1]), abs(a[2]-b[2]))
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([2, 9]) == 1, "First"
 	assert checkio([9, 2]) == 1, "Reverse First"

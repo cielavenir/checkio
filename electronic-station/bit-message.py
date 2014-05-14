@@ -35,7 +35,6 @@ def checkio(_data):
 	message=pack('H'*length,*data).decode('utf-16')
 	return [time,length,message]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert (checkio('002080629173148007EDF27C1E3E9701') ==
 			['26 Aug 2002 19:37:41 GMT +2', 7, u'message']), "First Test"

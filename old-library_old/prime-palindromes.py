@@ -10,7 +10,6 @@ def checkio(number):
 			j+=1
 		if j*j>i: return i
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(31) == 101, 'First example'
 	assert checkio(130) == 131, 'Second example'

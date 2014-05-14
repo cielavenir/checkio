@@ -2,7 +2,6 @@ b=lambda s,c: ((s[0]==c and s[1]==c and s[2]==c)or(s[3]==c and s[4]==c and s[5]=
 solve=lambda game_result: 'X' if b(game_result,'X') else 'O' if b(game_result,'O') else 'D'
 checkio=lambda game_result: solve(''.join(game_result))
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([
 		"X.O",

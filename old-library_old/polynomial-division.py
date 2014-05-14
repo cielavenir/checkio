@@ -71,7 +71,6 @@ def checkio(a):
 		b[0].pop()
 	return [format(e) for e in [list(reversed(c)),b[0]]]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(['x*x*x-12*x*x-42', 'x-3']) == ['x*x-9*x-27', '-123'], "1st"
 	assert checkio(['x*x-1', 'x+1']) == ['x-1', ''], "2nd"

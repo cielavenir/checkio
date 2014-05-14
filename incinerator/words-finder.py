@@ -28,7 +28,6 @@ def checkio(text, words):
 		text=text[:e[0]]+'<span>'+text[e[0]:e[1]+1]+'</span>'+text[e[1]+1:]
 	return text
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert (checkio("This is only a text example for task example.", "example") ==
 			"This is only a text <span>example</span> for task <span>example</span>."), "Simple test"

@@ -4,7 +4,6 @@ def checkio(balance, withdrawal):
 			balance-=e+1
 	return balance
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(120, [10, 20, 30]) == 57, 'First example'
 	# With one Insufficient Funds, and then withdraw 10 $

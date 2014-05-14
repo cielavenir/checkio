@@ -14,7 +14,6 @@ def checkio(fraction):
 			if all(tail_rev[j]==tail_rev[i+j] and tail_rev[i+j]==tail_rev[2*i+j] for j in range(i)):
 				return head+tail_rev[i*3:][::-1]+'('+tail_rev[0:i][::-1]+')'
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([1, 3]) == "0.(3)", "1/3 Classic"
 	assert checkio([5, 3]) == "1.(6)", "5/3 The same, but bigger"

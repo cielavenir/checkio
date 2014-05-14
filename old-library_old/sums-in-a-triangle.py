@@ -5,7 +5,6 @@ def checkio(data):
 		data[i][i]+=data[i-1][i-1]
 	return max(data[len(data)-1])
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([
 		[1],

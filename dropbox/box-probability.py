@@ -12,7 +12,6 @@ def checkio(marbles, step):
 	w=sum(e=='w' for e in iter(marbles))
 	return dfs(b,w,1.0,step-1)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio('bbw', 3) == 0.48, "1st example"
 	assert checkio('wwb', 3) == 0.52, "2nd example"

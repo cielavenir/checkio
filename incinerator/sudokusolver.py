@@ -30,7 +30,6 @@ def dfs(m,n):
 
 checkio=lambda m: dfs(m,0)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([[0, 7, 1, 6, 8, 4, 0, 0, 0],
 					[0, 4, 9, 7, 0, 0, 0, 0, 0],

@@ -11,7 +11,6 @@ def checkio(height, width):
 	else:
 		return [4.0/3*math.pi*width*width*height,4*math.pi*width*width]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(4, 2) == [8.38, 21.48], "Prolate spheroid"
 	assert checkio(2, 2) == [4.19, 12.57], "Sphere"

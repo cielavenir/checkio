@@ -14,7 +14,6 @@ def bfs(data,s):
 def checkio(field_map):
 	return min(bfs(field_map,(x,0)) for x in range(len(field_map[0])))
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([[1, 1, 1, 1, 0, 1, 1],
 					[1, 1, 1, 1, 0, 0, 1],

@@ -26,7 +26,6 @@ def checkio(data):
 	b=convert(data[1])
 	return abs(a[0]-b[0])+abs(a[1]-b[1])
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([1, 9]) == 2, "First"
 	assert checkio([9, 1]) == 2, "Reverse First"

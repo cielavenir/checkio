@@ -17,7 +17,6 @@ def checkio(url):
 	url=re.sub('\./','',url)
 	return url
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio("Http://Www.Checkio.org") == \
 		"http://www.checkio.org", "1st rule"

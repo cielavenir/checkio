@@ -7,7 +7,6 @@ def checkio(text):
 		if m and all((len(m.group(i))<2 or m.group(i)[0]!='0') and 0<=int(m.group(i))<=255 for i in range(1,5)): r.append(e)
 	return r
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio("192.168.1.1 and 10.0.0.1 or 127.0.0.1") == \
 		["192.168.1.1", "10.0.0.1", "127.0.0.1"], "All correct"

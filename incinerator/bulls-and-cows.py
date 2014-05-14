@@ -46,7 +46,6 @@ def checkio(data):
 	#return random.choice(lst)
 
 if __name__ == '__main__':
-	#This part is using only for self-checking and not necessary for auto-testing
 	def check_solution(func, goal):
 		recent = []
 		for step in range(7): # not 8; assessment function installed.

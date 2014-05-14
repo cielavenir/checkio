@@ -14,7 +14,6 @@ def checkio(matrix):
 			if all(matrix[y][x]==matrix[y+k][x+k] for k in range(4)): return True
 	return False
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([
 		[1, 2, 1, 1],

@@ -21,7 +21,6 @@ def checkio(move):
 		if (between(0,a+i*2,7) and between(0,c-j,7))or(between(0,c+j*2,7) and between(0,a-i,7)): r=2
 	return r
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == "__main__":
 	assert checkio("b1-d5") == 2, "1st example"
 	assert checkio("a6-b8") == 1, "2nd example"

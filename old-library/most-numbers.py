@@ -1,6 +1,5 @@
 checkio=lambda *args: 0 if len(args)==0 else max(args)-min(args)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	def almost_equal(checked, correct, significant_digits):
 		precision = 0.1 ** significant_digits

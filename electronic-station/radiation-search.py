@@ -12,7 +12,6 @@ def checkio(data):
 				r.append([dfs(data,x,y,c),c])
 	return max(r)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([
 		[1, 2, 3, 4, 5],

@@ -15,7 +15,6 @@ else:
 
 checkio=lambda data: ' : '.join('{:03b} {:04b}'.format(int(e)//10,int(e)%10) for e in data.split(':'))[1:].translate(maketrans('01', '.-'))
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio("10:37:49") == ".- .... : .-- .--- : -.. -..-", "First Test"
 	assert checkio("21:34:56") == "-. ...- : .-- .-.. : -.- .--.", "Second Test"

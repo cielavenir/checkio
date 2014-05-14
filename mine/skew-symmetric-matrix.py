@@ -5,7 +5,6 @@ def checkio(matrix):
 			if matrix[y][x]!=-tr[y][x]: return False
 	return True
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([
 		[0, 1, 2],

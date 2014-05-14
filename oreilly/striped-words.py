@@ -10,7 +10,6 @@ def checkio(text):
 		if re.search(r'^([bcdfghjklmnpqrstvwxz][aeiouy])+[bcdfghjklmnpqrstvwxz]$',e): r+=1
 	return r
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio("My name is ...") == 3, "All words are striped"
 	assert checkio("Hello world") == 0, "No one"

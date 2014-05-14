@@ -28,7 +28,6 @@ def checkio(attempts):
 '''
 
 '''
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	checkio([(1, 5)])									# the number has a remainder 1
 	checkio([(1, 5), (1, 2)])							# the number has a remainder 1

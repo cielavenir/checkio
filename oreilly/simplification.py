@@ -61,7 +61,6 @@ def checkio(s):
 	s=re.sub(r'x','0,1',s)
 	return format([int(_) for _ in process(s).split(',')])
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == "__main__":
 	assert checkio("(x-1)*(x+1)") == "x*x-1", "First and simple"
 	assert checkio("(x+1)*(x+1)") == "x*x+2*x+1", "Almost the same"

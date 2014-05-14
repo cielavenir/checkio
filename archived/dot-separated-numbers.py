@@ -6,7 +6,6 @@ def checkio(text):
 			a[i]='.'.join(reversed([s[j:j+3][::-1] for j in range(0,len(s),3)]))
 	return ' '.join(a)
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio('123456') == '123.456', "1st example"
 	assert checkio('333') == '333', "2nd example"

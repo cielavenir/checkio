@@ -12,7 +12,6 @@ def checkio(radius):
 				else: y+=1
 	return [x*4, y*4]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(2) == [4, 12], "N=2"
 	assert checkio(3) == [16, 20], "N=3"

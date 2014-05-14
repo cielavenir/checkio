@@ -7,7 +7,6 @@ def checkio(expr):
 			if len(stack)==0 or stack.pop()!=e: return False
 	return len(stack)==0
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio("((5+3)*2+1)") == True, "Simple"
 	assert checkio("{[(3+1)+2]+}") == True, "Different types"

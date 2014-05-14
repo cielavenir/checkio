@@ -12,7 +12,6 @@ def checkio(opacity):
 	for index,item in enumerate(z):
 		if item==opacity: return index
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(10000) == 0, "Newborn"
 	assert checkio(9999) == 1, "1 year"

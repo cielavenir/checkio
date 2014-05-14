@@ -42,7 +42,6 @@ def checkio(_house, stephan, ghost):
 	return move[0]
 
 if __name__ == '__main__':
-	#This part is using only for self-checking and not necessary for auto-testing
 	from random import choice
 	DIRS = {"N": -4, "S": 4, "E": 1, "W": -1}
 	def check_solution(func, house):

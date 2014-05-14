@@ -12,7 +12,6 @@ def checkio(a):
 	return ret%m
 
 if __name__ == '__main__':
-	#These "asserts" using only for self-checking and not necessary for auto-testing
 	assert (checkio([(2, 3), (3, 5), (2, 7)]) == 23), "First Test"
 	assert (checkio([(1, 5), (4, 7)]) == 11), "Second Test"
 	assert (checkio([(1, 3), (2, 5), (3, 7)]) == 52), "Third Test"

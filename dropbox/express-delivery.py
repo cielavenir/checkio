@@ -32,7 +32,6 @@ def checkio(field_map):
 	return 'B'.join(m) if len(m[0])*2+1+len(m[1])+1+len(m[2])*2<len(n)*2 else n
 
 if __name__ == '__main__':
-	#This part is using only for self-checking and not necessary for auto-testing
 	ACTIONS = {
 		"L": (0, -1),
 		"R": (0, 1),

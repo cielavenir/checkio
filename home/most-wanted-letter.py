@@ -11,7 +11,6 @@ def checkio(text):
 		r.append(e[0])
 	return sorted(r)[0]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio("Hello World!") == "l", "Hello test"
 	assert checkio("How do you do?") == "o", "O is most wanted"

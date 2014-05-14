@@ -4,7 +4,6 @@ def checkio(numbers):
 		numbers[i]+=max(numbers[i-1],numbers[i-2])
 	return numbers[-1]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([5, -3, -1, 2]) == 6, 'Fifth'
 	assert checkio([5, 6, -10, -7, 4]) == 8, 'First'

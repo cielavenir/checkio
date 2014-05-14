@@ -9,7 +9,6 @@ def checkio(data):
 		s += e if i%2==1 else sum(int(f) for f in str(e*2))
 	return [str(10-((s-1)%10+1)),s]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert (checkio("799 273 9871") == ["3", 67]), "First Test"
 	assert (checkio("139-MT") == ["8", 52]), "Second Test"

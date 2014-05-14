@@ -73,7 +73,6 @@ def checkio(element):
 	return [str(_n), noble_gas+notation, ' '.join(result_diagram)]
 
 if __name__ == '__main__':
-	#These "asserts" using only for self-checking and not necessary for auto-testing
 	assert (checkio('H') == ["1", u"1s¹", "1"]), "First Test - 1s¹"
 	assert (checkio('He') == ["2", u"1s²", "2"]), "Second Test - 1s²"
 	assert (checkio('Al') == ["13", u"[Ne] 3s² 3p¹", "2 2 222 2 100"]), "Third Test - 1s² 2s² 2p⁶ 3s² 3p¹"

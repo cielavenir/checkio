@@ -27,7 +27,6 @@ def checkio(matrix):
 		m.append(a)
 	return gauss(m)[0][4]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	checkio({
 		'gold-tin': Fraction(1, 2),

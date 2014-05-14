@@ -15,7 +15,6 @@ def checkio(text_, word):
 			except IndexError: pass
 	return None
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio("""DREAMING of apples on a wall,
 And dreaming often, dear,

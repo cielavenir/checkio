@@ -8,7 +8,6 @@ def friendly_number(number,base=1000,decimals=0,suffix='',powers=['', 'k', 'M', 
 	#return '%.*f'%(decimals,number)+powers[power]+suffix
 	return '{:.{decimals}f}'.format(number,decimals=decimals)+powers[power]+suffix
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert friendly_number(102) == '102', '102'
 	assert friendly_number(10240) == '10k', '10k'

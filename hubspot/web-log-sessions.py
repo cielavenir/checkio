@@ -21,7 +21,6 @@ def checkio(log_text):
 		result.append((k[0],k[1],(v[-1]-t).seconds+1,len(v)-idx))
 	return '\n'.join(';;'.join(str(f) for f in e) for e in sorted(result))
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert (checkio(
 """2013-01-01-01-00-00;;Name;;http://checkio.org/task

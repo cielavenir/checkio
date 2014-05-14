@@ -18,7 +18,6 @@ def checkio(number):
 		ret+=FIRST_TEN[number%10]
 	return ret
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(4) == 'four', "1st example"
 	assert checkio(133) == 'one hundred thirty three', "2nd example"

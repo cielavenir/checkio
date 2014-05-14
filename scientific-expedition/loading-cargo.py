@@ -14,7 +14,6 @@ def checkio(data):
 		ret=min(ret,abs(l-r))
 	return ret
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio([10, 10]) == 0, "1st example"
 	assert checkio([10]) == 10, "2nd example"

@@ -11,7 +11,6 @@ def checkio(chips):
 			r=max(r,dfs(z,a,a,0,a[2]))
 	return r
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
 	assert checkio(
 		[[1, 4, 20], [3, 1, 5], [50, 2, 3],

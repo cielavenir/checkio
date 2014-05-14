@@ -31,9 +31,7 @@ def checkio(steps):
 	if len(steps)-z==2: return [steps[z][0]+0,steps[z][1]+1]
 	if len(steps)-z==3: return [steps[z][0]+1,steps[z][1]+1]
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
-	#This part is using only for self-checking and not necessary for auto-testing
 	from math import hypot
 	MAX_STEP = 12
 	def check_solution(func, goal, start):
