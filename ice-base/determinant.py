@@ -2,7 +2,7 @@ checkio=lambda l: 0 if len(l)<1 else l[0][0] if len(l)==1 else l[0][0]*l[1][1]-l
 
 '''
 def checkio(l):
-    n=len(l)
+	n=len(l)
 	if n<1: return 0
 	elif n==1: return l[0][0]
 	elif n==2: return l[0][0]*l[1][1]-l[0][1]*l[1][0]

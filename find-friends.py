@@ -19,10 +19,10 @@ def check_connection(_conn,a,b):
 
 if __name__ == '__main__':
 	assert check_connection(
-    ("dr101-mr99", "mr99-out00", "dr101-out00", "scout1-scout2",
-     "scout3-scout1", "scout1-scout4", "scout4-sscout", "sscout-super"),
-    "scout2", "scout3") == True
+	("dr101-mr99", "mr99-out00", "dr101-out00", "scout1-scout2",
+	 "scout3-scout1", "scout1-scout4", "scout4-sscout", "sscout-super"),
+	"scout2", "scout3") == True
 	assert check_connection(
-    ("dr101-mr99", "mr99-out00", "dr101-out00", "scout1-scout2",
-     "scout3-scout1", "scout1-scout4", "scout4-sscout", "sscout-super"),
-    "dr101", "sscout") == False
+	("dr101-mr99", "mr99-out00", "dr101-out00", "scout1-scout2",
+	 "scout3-scout1", "scout1-scout4", "scout4-sscout", "sscout-super"),
+	"dr101", "sscout") == False

@@ -16,8 +16,8 @@ def checkio(r):
 	return ''.join(reversed(xxx))
 
 if __name__ == '__main__':
-    assert checkio(1) == 'A'
-    assert checkio(2) == 'B'
-    assert checkio(26) == 'Z'
-    assert checkio(27) == 'AA'
-    print('Done')
+	assert checkio(1) == 'A'
+	assert checkio(2) == 'B'
+	assert checkio(26) == 'Z'
+	assert checkio(27) == 'AA'
+	print('Done')
