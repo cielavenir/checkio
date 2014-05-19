@@ -1,6 +1,5 @@
 #coding:utf-8
 from struct import pack
-import sys
 month=('','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
 
 def checkio(_data):

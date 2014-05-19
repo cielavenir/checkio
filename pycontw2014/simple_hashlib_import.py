@@ -1,4 +1,7 @@
-checkio=lambda a,b:__import__('hashlib').__dict__[b](a.encode()).hexdigest()
+g=__import__.__globals__
+sys=g['sys']
+hashlib=sys.modules['hashlib']
+checkio=lambda a,b:getattr(hashlib,b)(a.encode()).hexdigest()
 
 if __name__ == '__main__':
 	assert checkio('welcome', 'md5') == '40be4e59b9a2a2b5dffb918c0e86b3d7'
