@@ -1,7 +1,7 @@
 def checkio(l, n):
 	m=1
 	for i in range(n): m*=l[i]
-	ret=0
+	ret=m
 	for i in range(n,len(l)):
 		m*=l[i]
 		m//=l[i-n]
