@@ -571,7 +571,10 @@ class merkledamgaard(Hash):
 
     def compute(self, message):
         self.ihvs = list(self.IVs)
-        message += self.pad(message)
+        if 'maketrans' in str.__dict__: #Py3
+            message = message+self.pad(message)
+        else: #Py2
+            message = bytes(message)+self.pad(message)
         for block in as_bytes_blocks(message, self.block_length // 8):
             self.process_block(block)
         self.finalize()
@@ -860,4 +863,10 @@ def checkio(str,algo):
 if __name__ == '__main__':
     assert checkio('welcome', 'md5') == '40be4e59b9a2a2b5dffb918c0e86b3d7'
     assert checkio('happy spam', 'sha224') == '6e9dc3e01d57f1598c2b40ce59fc3527e698c77b15d0840ae96a8b5e'
+    assert checkio('welcome to pycon', 'md5') == '5cca7176c3e14742f117b8e85a1cb262'
+    assert checkio('welcome to pycon', 'sha1') == '4a14e2da8444f0c05d3f80f4209c1e2f983a83e1'
+    assert checkio('welcome to pycon', 'sha224') == 'f0ac92efb1ff56b9be0e6da46c8ae1a8d4ae398b089c9b9eaea41269'
+    assert checkio('welcome to pycon', 'sha256') == 'a555343a86902bf0950f7668a96b8ed718646dbb5f896a2dd09ea0a88f3c00b4'
+    assert checkio('welcome to pycon', 'sha384') == '0a67310f6eaf6adb5fb6f4c679aedce3716c6d1528a201189c55f631b9656c69f68899dca4699ef44d74a238bd7106e1'
+    assert checkio('welcome to pycon', 'sha512') == '91ad76b2163a60a5fa7884483d0f706ac4a252ac5a2e7137600bae99742f3c7cabe0870e7d02cd2cf8f21f3a313c7b45d127dcbae45f192d05ad146344774d6c'
     print('Done')
