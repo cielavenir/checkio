@@ -1,6 +1,5 @@
-def checkio(data):
+def recall_password(grille, template):
 	r=''
-	grille, template = data
 	for i in range(len(grille)):
 		for j in range(len(grille)):
 			if grille[i][j]=='X': r+=template[i][j]
@@ -14,6 +13,9 @@ def checkio(data):
 		for j in range(len(grille)):
 			if grille[j][len(grille)-1-i]=='X': r+=template[i][j]
 	return r
+
+#old library cipher-map compatibility
+checkio=lambda data:recall_password(data[0],data[1])
 
 if __name__ == '__main__':
 	assert checkio([

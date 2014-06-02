@@ -21,10 +21,13 @@ def convert(n):
 			base[0]-=1
 	return base
 
-def checkio(data):
-	a=convert(data[0])
-	b=convert(data[1])
+def find_distance(first,second):
+	a=convert(first)
+	b=convert(second)
 	return abs(a[0]-b[0])+abs(a[1]-b[1])
+
+#old library destination-in-spiral compatibility
+checkio=lambda data:find_distance(data[0],data[1])
 
 if __name__ == '__main__':
 	assert checkio([1, 9]) == 2, "First"
