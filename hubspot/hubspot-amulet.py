@@ -8,9 +8,11 @@ def gauss(a):
 				if a[j][i]!=0:
 					for k in range(i,n+1): a[i][k]+=a[j][k]
 					break
+			else:
+				return None
 		for j in range(n):
 			if i!=j:
-				r = Fraction(a[j][i],1) / a[i][i]
+				r = Fraction(a[j][i],a[i][i])
 				for k in range(i,n+1): a[j][k] = a[j][k] - a[i][k]*r
 	for i in range(n):
 		x=Fraction(a[i][i],1)
