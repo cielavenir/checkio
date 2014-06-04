@@ -1,4 +1,4 @@
-def checkio(enemy):
+def winning_die(enemy):
 	player=sorted(enemy)
 	l=len(player)
 	#n=min(player[l-1]-1,l-1)
@@ -12,7 +12,7 @@ def checkio(enemy):
 
 if __name__ == '__main__':
 	def test_dice(enemy):
-		player=checkio(enemy)
+		player=winning_die(enemy)
 		assert len(player)==len(enemy)
 		assert sum(player)==sum(enemy)
 		total = 0
@@ -28,4 +28,4 @@ if __name__ == '__main__':
 	assert test_dice([1, 1, 1, 4])
 	assert test_dice([2, 3, 4, 5, 6, 7])
 	assert test_dice([1, 1, 1, 2, 2, 2, 3, 3, 3, 4])
-	assert checkio([1, 2, 3, 4, 5, 6]) == []
+	assert winning_die([1, 2, 3, 4, 5, 6]) == []

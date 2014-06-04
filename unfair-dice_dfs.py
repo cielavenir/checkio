@@ -11,7 +11,7 @@ def dfs(enemy,se,player,sp):
 		for i in range(player[-1],(se-sp)//(len(enemy)-len(player))+1):
 			for e in dfs(enemy,se,player+[i],sp+i): yield e
 
-def checkio(enemy):
+def winning_die(enemy):
 	se=sum(enemy)
 	for i in range(1,se//len(enemy)+1):
 		for e in dfs(enemy,se,[i],i):
@@ -21,7 +21,7 @@ def checkio(enemy):
 
 if __name__ == '__main__':
 	def test_dice(enemy):
-		player=checkio(enemy)
+		player=winning_die(enemy)
 		assert len(player)==len(enemy)
 		assert sum(player)==sum(enemy)
 		total = 0
@@ -38,4 +38,4 @@ if __name__ == '__main__':
 	assert test_dice([1, 1, 1, 4])
 	assert test_dice([2, 3, 4, 5, 6, 7])
 	assert test_dice([1, 1, 1, 2, 2, 2, 3, 3, 3, 4])
-	assert checkio([1, 2, 3, 4, 5, 6]) == []
+	assert winning_die([1, 2, 3, 4, 5, 6]) == []
