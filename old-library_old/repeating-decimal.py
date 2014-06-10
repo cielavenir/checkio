@@ -1,5 +1,6 @@
-def checkio(fraction):
-	numerator,denominator = fraction
+def convert(numerator,denominator):
+	if numerator==0: return '0.'
+	if denominator==1: return str(numerator)+'.'
 	head=str(numerator//denominator)+'.'
 	numerator%=denominator
 	tail=''
@@ -13,6 +14,9 @@ def checkio(fraction):
 		for i in range(1,len(tail_rev)//3+1):
 			if all(tail_rev[j]==tail_rev[i+j] and tail_rev[i+j]==tail_rev[2*i+j] for j in range(i)):
 				return head+tail_rev[i*3:][::-1]+'('+tail_rev[0:i][::-1]+')'
+
+#old library repeating-decimal compatibility
+checkio=lambda data:convert(*data)
 
 if __name__ == '__main__':
 	assert checkio([1, 3]) == "0.(3)", "1/3 Classic"

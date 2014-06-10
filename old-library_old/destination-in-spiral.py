@@ -27,7 +27,7 @@ def find_distance(first,second):
 	return abs(a[0]-b[0])+abs(a[1]-b[1])
 
 #old library destination-in-spiral compatibility
-checkio=lambda data:find_distance(data[0],data[1])
+checkio=lambda data:find_distance(*data)
 
 if __name__ == '__main__':
 	assert checkio([1, 9]) == 2, "First"

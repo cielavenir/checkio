@@ -15,7 +15,7 @@ def recall_password(grille, template):
 	return r
 
 #old library cipher-map compatibility
-checkio=lambda data:recall_password(data[0],data[1])
+checkio=lambda data:recall_password(*data)
 
 if __name__ == '__main__':
 	assert checkio([
