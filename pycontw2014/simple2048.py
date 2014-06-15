@@ -1,13 +1,13 @@
 #from itertools import groupby
 def twoeleven_iterate(iterable,z):
 	#squeezed=[e[0] for e in groupby(iterable, key)]
-	squeezed=iterable
+	squeezed=list(z(iterable))
 	i=0
 	while i<len(squeezed)-1:
 		if squeezed[i]==squeezed[i+1]:
 			squeezed=squeezed[:i]+[2*squeezed[i]]+squeezed[i+2:]
 		i+=1
-	return list(z(squeezed))+[0]*(4-len(squeezed))
+	return squeezed+[0]*(4-len(squeezed))
 
 def move2048(a, b):
 	if b=='up': x=list(map(list,zip(*[twoeleven_iterate([a[j][i] for j in range(4) if a[j][i]!=0],list) for i in range(4)])))
