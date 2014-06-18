@@ -1,4 +1,4 @@
-def checkio(n, s, t, b):
+def expected(n, s, t, b):
 	#perform probably-dice
 	a=[0]*(s*(n+1)+1)
 	for i in range(1,s+1):
@@ -29,7 +29,7 @@ if __name__ == '__main__':
 		precision = 0.1 ** significant_digits
 		assert correct - precision < checked < correct + precision
 	def addTest(c, i, a):
-		almost_equal(checkio(*i),a)
+		almost_equal(expected(*i),a)
 	addTest("Basics", [1, 4, 1, [0, 0, 0, 0]], 4.00)
 	addTest("Basics", [1, 4, 2, [0, 0, 0, 0]], 4.00)
 	addTest("Basics", [1, 4, 3, [0, 0, 0, 0]], 4.00)

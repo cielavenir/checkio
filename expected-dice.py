@@ -1,5 +1,5 @@
 import random
-def checkio(n, s, t, b):
+def expected(n, s, t, b):
 	_t=200000
 	_s=0
 	for _i in range(_t):
@@ -17,9 +17,9 @@ if __name__ == '__main__':
 	def almost_equal(checked, correct, significant_digits=1):
 		precision = 0.1 ** significant_digits
 		return correct - precision < checked < correct + precision
-	assert(almost_equal(checkio(1, 4, 3, [0, 0, 0, 0]), 4.0))
-	assert(almost_equal(checkio(1, 4, 1, [0, 0, 0, 0]), 4.0))
-	assert(almost_equal(checkio(1, 4, 3, [0, 2, 1, 0]), 1.3))
-	assert(almost_equal(checkio(1, 4, 3, [0, -1, -2, 0]), 4.0))
-	assert(almost_equal(checkio(1, 6, 1, [0] * 10), 8.6))
-	assert(almost_equal(checkio(2, 6, 1, [0] * 10), 10.2))
+	assert(almost_equal(expected(1, 4, 3, [0, 0, 0, 0]), 4.0))
+	assert(almost_equal(expected(1, 4, 1, [0, 0, 0, 0]), 4.0))
+	assert(almost_equal(expected(1, 4, 3, [0, 2, 1, 0]), 1.3))
+	assert(almost_equal(expected(1, 4, 3, [0, -1, -2, 0]), 4.0))
+	assert(almost_equal(expected(1, 6, 1, [0] * 10), 8.6))
+	assert(almost_equal(expected(2, 6, 1, [0] * 10), 10.2))
