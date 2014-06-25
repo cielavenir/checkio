@@ -1,4 +1,4 @@
-t=lambda s:s[0]+t(s[2+int('aeiouy'.find(s[0])>=0):])if s else''
+t=lambda s:s and s[0]+t(s[2+int('aeiouy'.find(s[0])>=0):])
 translate=lambda s:' '.join(map(t,s.split()))
 
 if __name__ == '__main__':
