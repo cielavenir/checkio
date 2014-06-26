@@ -1,4 +1,4 @@
-translate=lambda s:s and s[0]+translate(s[1+int(s[0]!=' ')+int('aeiouy'.find(s[0])>=0):])
+translate=lambda s:s and s[0]+translate(s[1+(s[0]>' ')+(s[0]in'aeiouy'):])
 
 if __name__ == '__main__':
 	assert translate("hieeelalaooo") == "hello", "Hi!"
