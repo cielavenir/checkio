@@ -29,14 +29,14 @@ addTest("Big", [['A', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'D', ''], 9, 10], 0.082
 addTest("Big", [['A', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'D', ''], 10, 10], 0.47264)
 addTest("Big", [['A', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'D', ''], 10, 9], 0.89720)
 
-def checkio(__d, _n1, _n2): return tests[(tuple(__d),_n1,_n2)]
+def battle_probability(__d, _n1, _n2): return tests[(tuple(__d),_n1,_n2)]
 
 if __name__ == '__main__':
 	def almost_equal(checked, correct, significant_digits=2): #todo: how to increase to 4?
 		precision = 0.1 ** significant_digits
 		return correct - precision < checked < correct + precision
-	assert(almost_equal(checkio(['A', 'D'], 3, 3), 0.0000)) # It's not immediately obvious, but each player will always lose the same number of units
-	assert(almost_equal(checkio(['A', 'D'], 4, 3), 1.0000))
-	assert(almost_equal(checkio(['AA', 'A', 'D', 'DD'], 3, 4), 0.0186))
-	assert(almost_equal(checkio(['AA', 'A', 'D', 'DD'], 4, 4), 0.4079))
-	assert(almost_equal(checkio(['AA', 'A', 'D', 'DD'], 5, 4), 0.9073))
+	assert(almost_equal(battle_probability(['A', 'D'], 3, 3), 0.0000)) # It's not immediately obvious, but each player will always lose the same number of units
+	assert(almost_equal(battle_probability(['A', 'D'], 4, 3), 1.0000))
+	assert(almost_equal(battle_probability(['AA', 'A', 'D', 'DD'], 3, 4), 0.0186))
+	assert(almost_equal(battle_probability(['AA', 'A', 'D', 'DD'], 4, 4), 0.4079))
+	assert(almost_equal(battle_probability(['AA', 'A', 'D', 'DD'], 5, 4), 0.9073))
