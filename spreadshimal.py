@@ -13,7 +13,7 @@ def checkio(r):
 	if flg>0:
 		j-=1
 		xxx=xxx[:j]
-	return ''.join(reversed(xxx))
+	return xxx[::-1]
 
 if __name__ == '__main__':
 	assert checkio(1) == 'A'
