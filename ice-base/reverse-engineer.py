@@ -25,7 +25,7 @@ def gen(x,y):
 def checkio(data):
 	global lst
 	if len(data)==0:
-		lst=set([e[1] for e in gen(2,3)])
+		lst={e[1] for e in gen(2,3)}
 		return ['x+y',2,3]
 	newlst=[]
 	for n,s in gen(data[-1][0],data[-1][1]):

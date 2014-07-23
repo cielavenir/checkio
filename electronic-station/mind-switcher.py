@@ -40,12 +40,12 @@ def mind_switcher(_journal):
 	#[['driller', 'lister'], ['melter', 'hammer', 'hater', 'drawer', 'digger'], ['scout', 'planer']]
 	ret=[]
 	for i in range(len(lst2)):
-		ret.append(set([helper[0],lst2[i][0]]))
+		ret.append({helper[0],lst2[i][0]})
 		for j in range(1,len(lst2[i])):
-			ret.append(set([helper[1],lst2[i][j]]))
-		ret.append(set([helper[0],lst2[i][1]]))
-		ret.append(set([helper[1],lst2[i][0]]))
-	if len(lst2)%2==1: ret.append(set([helper[0],helper[1]]))
+			ret.append({helper[1],lst2[i][j]})
+		ret.append({helper[0],lst2[i][1]})
+		ret.append({helper[1],lst2[i][0]})
+	if len(lst2)%2==1: ret.append({helper[0],helper[1]})
 	#print(ret)
 	return ret
 
