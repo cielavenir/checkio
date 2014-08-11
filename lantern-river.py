@@ -31,7 +31,7 @@ class Maze:
 		self.v[self.y][self.x]='*'
 		self.route.append((self.x,self.y))
 
-def lantern_flow(_state,time):
+def lanterns_flow(_state,time):
 	rows=len(_state)
 	cols=len(_state)
 	state=[['X']*cols]+[list(e) for e in _state]+[['X']*cols]
@@ -530,4 +530,4 @@ TESTS = {
 if __name__=='__main__':
 	for k,v in TESTS.items():
 		for e in v:
-			assert lantern_flow(*e['input'])==e['answer']
+			assert lanterns_flow(*e['input'])==e['answer']
