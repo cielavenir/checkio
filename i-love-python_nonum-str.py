@@ -23,5 +23,4 @@ def i_love_python():
 	s+=chr(sfive|szero)
 	return s
 
-if __name__=='__main__':
-	print(i_love_python())
+if __name__=='__main__': assert i_love_python()=='I love Python!'

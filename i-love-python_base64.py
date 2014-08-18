@@ -1,6 +1,3 @@
 import base64
-def i_love_python():
-	return base64.b64decode('SSBsb3ZlIFB5dGhvbiE=')
-
-if __name__=='__main__':
-	print(i_love_python())
+i_love_python=lambda:base64.b64decode('SSBsb3ZlIFB5dGhvbiE=').decode('utf-8')
+if __name__=='__main__': assert i_love_python()=='I love Python!'
