@@ -1,11 +1,11 @@
 from functools import reduce # reduce version must be submitted using Py2
 
-#def golf(c):
-# z=set()
-# for n in range(1,len(c)+1):z=z.union(map(sum,__import__('itertools').combinations(c,n)))
-# return min(set(range(1,99))-z)
+def golf(c):
+ z=set()
+ for n in range(1,len(c)+1):z=z.union(map(sum,__import__('itertools').combinations(c,n)))
+ return min(set(range(1,99))-z)
 
-#golf=lambda c:min(set(range(1,99))-reduce(lambda x,y:x.union(y),[set(map(sum,__import__('itertools').combinations(c,n)))for n in range(len(c))]))
+golf=lambda c:min(set(range(1,99))-reduce(lambda x,y:x.union(y),[set(map(sum,__import__('itertools').combinations(c,n)))for n in range(len(c))]))
 
 def golf(c):
  l=len(c);z=set()

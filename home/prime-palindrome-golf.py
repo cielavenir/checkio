@@ -1,7 +1,7 @@
-#def golf(i):
-# while 1:
-#  i+=1
-#  if str(i)==str(i)[::-1]and all(i%j for j in range(2,i)):return i
+def golf(i):
+ while 1:
+  i+=1
+  if str(i)==str(i)[::-1]and all(i%j for j in range(2,i)):return i
 
 def golf(i):
  i+=1
