@@ -1,14 +1,15 @@
 def choose_good_gift(total_gifts, bag, accept_gift):
+	enum=bag()
 	n=total_gifts//2
 	gifts=[]
 	for i in range(n):
-		gifts.append(next(bag()))
+		gifts.append(next(enum))
 	value=int(1.1*sum(gifts)/n)
-	for e in bag():
-		if e > value:
+	total_gifts-=n
+	for i,e in enumerate(enum):
+		if e > value or i==total_gifts-1:
 			accept_gift()
 			return
-
 
 if __name__ == '__main__':
 	from random import random, randint, uniform
@@ -48,4 +49,4 @@ if __name__ == '__main__':
 			  'It seems like for bags of {:n} gifts -\n'
 			  'you would choose the second best gift, silver ;)'
 			  .format(best_gifts, bag_count, gift_count, round(gift_count / standings) + 1))
-	check_solution(1000)
+	check_solution(10000)
