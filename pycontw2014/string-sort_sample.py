@@ -2,7 +2,7 @@ import re
 def tryint(s):
 	try:
 		return int(s)
-	except:
+	except ValueError:
 		return s
 
 def natsort_key(s):

@@ -32,6 +32,8 @@ if __name__ == '__main__':
 	assert checkio([[0, 0], [1, 1], [3, 2], [2, 1]]) == False, "6th example"
 	assert shot((2, 2), (5, 7), (11, 2), (8, 3)) == 100, "1st case"
 	assert shot((2, 2), (5, 7), (11, 2), (7, 2)) == 0, "2nd case"
-	assert shot((2, 2), (5, 7), (11, 2), (8, 4)) == 33, "3th case"
+	assert shot((2, 2), (5, 7), (11, 2), (8, 4)) == 29, "3rd case"
 	assert shot((2, 2), (5, 7), (11, 2), (9, 5)) == -1, "4th case"
 	assert shot((2, 2), (5, 7), (11, 2), (10.5, 3)) == -1, "4th case again"
+	assert shot((2, 2), (10, 2), (5, 10), (5, 5)) == 75
+	assert shot((2, 10), (10, 2), (10, 10), (3, 9.9)) == 3

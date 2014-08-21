@@ -15,11 +15,18 @@ def golf(a):
  return r
 
 def golf(a):
+ l=len(a)
  r=0
- for i in range(1,len(a)):
-  for j in range(1,len(a[i])):
-   try: r+=all((x//3*(x%3)==1)^(a[i-1+x%3][j-1+x//3]!=' ')for x in range(9))
-   except IndexError:1
+ for i in range(l*99):
+  try: r+=all((x//3*(x%3)==1)^(a[i%l+x%3][i//l+x//3]!=' ')for x in range(9))
+  except:1
+ return r
+
+def golf(a):
+ r=0
+ for i in range(999):
+  try:r+=all((x//3*(x%3)==1)^(a[i%30+x%3][i//30+x//3]!=' ')for x in range(9))
+  except:1
  return r
 
 assert golf([
