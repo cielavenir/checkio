@@ -49,4 +49,4 @@ if __name__ == '__main__':
 			  'It seems like for bags of {:n} gifts -\n'
 			  'you would choose the second best gift, silver ;)'
 			  .format(best_gifts, bag_count, gift_count, round(gift_count / standings) + 1))
-	check_solution(10000)
+	check_solution(1000)

@@ -1,5 +1,5 @@
 import re
-check=lambda a:len(a.group(1))==len(a.group(3))and len(a.group(3))==len(a.group(5))
+check=lambda a:all(len(a.group(i))==len(a.group(i+2))for i in(1,3))
 recognize=lambda n:check(re.search('(1+)(0+)(1+)(0+)(1+)',format(n,'b')))
 
 if __name__ == '__main__':
