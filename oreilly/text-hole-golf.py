@@ -29,6 +29,18 @@ def golf(a):
   except:1
  return r
 
+#solutions without except
+
+z=lambda a,x,y:a[x:]!=[]and (a[x][y:]+' ')[0]!=' '
+golf=lambda a:sum(all((x//3*(x%3)==1)^(z(a,i%30+x%3,i//30+x//3))for x in range(9))for i in range(999))
+
+golf=lambda a:sum(all((x//3*(x%3)==1)^(a[i%30+x%3:]!=[]and (a[i%30+x%3][i//30+x//3:]+' ')[0]!=' ')for x in range(9))for i in range(999))
+
+def golf(a):
+ l=len(a)-2
+ return sum(all((x//3*(x%3)==1)^((a[i%l+x%3][i//l+x//3:]+' ')[0]!=' ')for x in range(9))for i in range(l*99))
+
+
 assert golf([
 	"How are you doing?",
 	"I'm fine. OK.",
