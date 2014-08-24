@@ -40,7 +40,6 @@ def golf(a):
  l=len(a)-2
  return sum(all((x//3*(x%3)==1)^((a[i%l+x%3][i//l+x//3:]+' ')[0]!=' ')for x in range(9))for i in range(l*99))
 
-
 assert golf([
 	"How are you doing?",
 	"I'm fine. OK.",

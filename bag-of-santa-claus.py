@@ -1,10 +1,11 @@
 def choose_good_gift(total_gifts, bag, accept_gift):
 	enum=bag()
-	n=total_gifts//2
+	n=total_gifts//3
 	gifts=[]
 	for i in range(n):
 		gifts.append(next(enum))
-	value=int(1.1*sum(gifts)/n)
+	#value=int(1.1*sum(gifts)/n)
+	value=max(gifts)
 	total_gifts-=n
 	for i,e in enumerate(enum):
 		if e > value or i==total_gifts-1:
