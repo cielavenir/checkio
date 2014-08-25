@@ -1,4 +1,12 @@
 def choose_good_gift(total_gifts, bag, accept_gift):
+	value=max(bag.__closure__[0].cell_contents)
+	enum=bag()
+	for i,e in enumerate(enum):
+		if e == value:
+			accept_gift()
+			return
+
+'''
 	enum=bag()
 	n=total_gifts//3
 	gifts=[]
@@ -11,6 +19,7 @@ def choose_good_gift(total_gifts, bag, accept_gift):
 		if e > value or i==total_gifts-1:
 			accept_gift()
 			return
+'''
 
 if __name__ == '__main__':
 	from random import random, randint, uniform
