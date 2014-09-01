@@ -1,6 +1,9 @@
+#import re
+#check=lambda a:all(len(a.group(i))==len(a.group(i+2))for i in(1,3))
+#recognize=lambda n:check(re.search('(1+)(0+)(1+)(0+)(1+)',format(n,'b')))
+
 import re
-check=lambda a:all(len(a.group(i))==len(a.group(i+2))for i in(1,3))
-recognize=lambda n:check(re.search('(1+)(0+)(1+)(0+)(1+)',format(n,'b')))
+recognize=lambda n:re.match('(1+)(0+)\\1(0+)\\1',format(n,'b'))!=None
 
 if __name__ == '__main__':
 	assert recognize(21) == True, "First example"
