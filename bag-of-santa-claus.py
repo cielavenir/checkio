@@ -3,7 +3,7 @@ def choose_good_gift(current_gift, gifts_in_bag, gift_number):
 	if gift_number==1: value=0
 	if gift_number<gifts_in_bag//3:
 		value=max(value,current_gift)
-	elif value<current_gift:
+	elif value<current_gift or gift_number==gifts_in_bag:
 		return True
 
 if __name__ == '__main__':
