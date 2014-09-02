@@ -39,7 +39,10 @@ def process(s):
 			s=m.group(1)+','.join(str(f) for f in sub([int(e) for e in m.group(2).split(',')],[int(e) for e in m.group(4).split(',')]))+m.group(5)
 	return s
 
-def format(a):
+format_exponent1=lambda i:'*'.join(['x']*i)
+format_exponent2=lambda i:'' if i==0 else 'x'+('' if i==1 else '**'+str(i))
+
+def format(a,format_exponent):
 	r=[]
 	for i,e in enumerate(a):
 		if e==0: continue
@@ -48,18 +51,20 @@ def format(a):
 			else: r.append(str(e))
 		else:
 			if e==1: s='+'
-			elif e==-1: e='-'
+			elif e==-1: s='-'
 			elif e>0: s='+'+str(e)+'*'
 			else: s=str(e)+'*'
-			r.append(s+'*'.join(['x']*i))
+			r.append(s+format_exponent(i))
 	if len(r)==0: r=['0']
 	ret=''.join(reversed(r))
 	return ret[1:] if ret[0]=='+' else ret
 
-def checkio(s):
-	s=re.sub(r'-','Z',s)
-	s=re.sub(r'x','0,1',s)
-	return format([int(_) for _ in process(s).split(',')])
+def perform(s,format_exponent):
+	s=s.replace('-','Z').replace('x','0,1')
+	return format([int(_) for _ in process(s).split(',')],format_exponent)
+
+checkio=lambda s:perform(s,format_exponent1)
+simplify=lambda s:perform(s,format_exponent2)
 
 if __name__ == "__main__":
 	assert checkio("(x-1)*(x+1)") == "x*x-1", "First and simple"
@@ -68,3 +73,11 @@ if __name__ == "__main__":
 	assert checkio("x+x*x+x*x*x") == "x*x*x+x*x+x", "Don't forget about order"
 	assert checkio("(2*x+3)*2-x+x*x*x*x") == "x*x*x*x+3*x+6", "All together"
 	assert checkio("x-x") == "0", "zero"
+	assert simplify("(x-1)*(x+1)") == "x**2-1", "First and simple"
+	assert simplify("(x+1)*(x+1)") == "x**2+2*x+1", "Almost the same"
+	assert simplify("(x+3)*x*2-x*x") == "x**2+6*x", "Different operations"
+	assert simplify("x+x*x+x*x*x") == "x**3+x**2+x", "Don't forget about order"
+	assert simplify("(2*x+3)*2-x+x*x*x*x") == "x**4+3*x+6", "All together"
+	assert simplify("x*x-(x-1)*(x+1)-1") == "0", "Zero"
+	assert simplify("5-5-x") == "-x", "Negative C1"
+	assert simplify("x*x*x-x*x*x-1") == "-1", "Negative C0"
