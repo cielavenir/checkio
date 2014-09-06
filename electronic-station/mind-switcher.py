@@ -54,4 +54,4 @@ if __name__ == '__main__':
 	assert mind_switcher(({'hater', 'scout'}, {'planer', 'hater'}))
 	assert mind_switcher([['digger', 'melter'], ['melter', 'planer'], ['digger', 'planer']])
 	assert mind_switcher([['melter', 'drawer'], ['hammer', 'hater'], ['melter', 'hater'], ['scout', 'planer'],
-                      ['driller', 'lister'], ['digger', 'drawer']])
+					  ['driller', 'lister'], ['digger', 'drawer']])
