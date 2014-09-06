@@ -1,4 +1,4 @@
-checkio=lambda *args: 0 if len(args)==0 else max(args)-min(args)
+checkio=lambda *args: max(args)-min(args) if args else 0
 
 if __name__ == '__main__':
 	def almost_equal(checked, correct, significant_digits):

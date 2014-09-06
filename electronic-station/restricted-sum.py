@@ -1,1 +1,1 @@
-checkio=lambda data: 0 if len(data)==0 else data[0]+checkio(data[1:])
+checkio=lambda data: data[0]+checkio(data[1:]) if data else 0
