@@ -5,7 +5,7 @@ def dfs(d):
 	global data
 	if d==len(lst): return data
 	i,j,k,z=lst[d]
-	a=[data[i+z%2*_k][j+z//2*_k] for _k in range(k)]
+	a=tuple([data[i+z%2*_k][j+z//2*_k] for _k in range(k)])
 	'''
 	if all(a[_k]!='.' for _k in range(k)):
 		_i=0
@@ -35,7 +35,7 @@ def solver(_data,_words):
 	wordflags={}
 	for e in _words:
 		if len(e) not in wordflags: wordflags[len(e)]=defaultdict(bool)
-		words[len(e)].append(list(e))
+		words[len(e)].append(tuple(e))
 	for e in words: random.shuffle(words[e])
 	#detect word area
 	data=[list(e) for e in _data]
@@ -75,8 +75,8 @@ def solver(_data,_words):
 				newlst.append(_lst.pop(i))
 			i-=1
 		lst+=newlst
-	#for e in lst: print(e)
-	#for e in _data: print(e)
+	for e in lst: print(e)
+	for e in _data: print(e)
 	return [''.join(e) for e in dfs(0)]
 
 if __name__ == '__main__':
@@ -164,12 +164,12 @@ if __name__ == '__main__':
 		"....XXXXX.XXX.X",
 		"XXXXXXXXX.XXXXX"],)
 	assert result, "4: " + message
-	'''
 	result, message = checker(solver, [
 		'....X.X.X.X....', '.XXXX.X.X.X.XX.', '......X.X....X.', 'XX.XX.X.X.XXXX.', '.X.XX........X.', '...XX.XXXXX.XXX',
     	'.XXXX.X.XXX....', '....X....XXXX.X', 'XXX.XXX.XXXXX.X', 'XXX.XX......X.X', '..XXXXXXX.X.XXX', 'X.XX......X....',
     	'X.XXX.X.X.X.X.X', 'X.....X...XXX.X', 'XXXXXXX.X.X...X'],)
 	assert result, "5: " + message
+	'''
 	result, message = checker(solver,  [
 		'......X.XXXXX.X.....', 'X.XXXXX.XXX.X.X.X.XX', 'X.X.....XXX...X....X', 'X.X.XXXXX.X.XXX.XXXX',
     	'......XXX...X......X', 'XXX.X.X.X.XXX.X.XX.X', '....X.....XX.....X.X', 'XXX.XXX.XXXXX.XXXXXX',
@@ -179,41 +179,57 @@ if __name__ == '__main__':
 	assert result, "6: " + message
 
 '''
-dXXXw
-earXi
-aXuXn
-dance
+aXXXb
+redXe
+eXoXa
+actor
 
-sock
-XnXX
-Xgod
-XXXu
-room
-XXXp
+XaXX
+army
+XeXX
+Xact
+XXXa
+ball
+XXXe
 
-mapXXXXXX
-aXXXsXrow
-novelXeXX
-XXXXiXpie
-XXripXoXX
-XXoXXXrXm
-XclientXe
-XXeXgXXXs
-XXXXglass
+ageXXXXXX
+cXXXbXarm
+tableXbXX
+XXXXaXraw
+XXairXoXX
+XXrXXXaXb
+XbeyondXa
+XXaXiXXXt
+XXXXlaugh
 
 lXteachingXXXaX
-aXoXXXXkXXXpXlX
+aXoXXXXkXXXfXlX
 youXXXXeXXXarmy
-XXrXXpXXXsXiXXX
-XpizzaXXXcancer
-XXsXXtXwXhXXXgX
-XXtechnologyXgX
-XXXXXXXrXoXeXXX
-XgXXXtotalXlabX
-XaXdXyXhXXXlXaX
-XsleepXXXcrossX
-XXXeXeXXXaXwXiX
-chipXXXXXrXXXsX
-XXXXXXXXXeXXXXX
+XXrXXbXXXsXrXXX
+XpizzaXXXcamera
+XXsXXtXmXhXXXaX
+XXtechnologyXwX
+XXXXXXXnXoXeXXX
+XbXXXtotalXlabX
+XaXoXaXhXXXlXuX
+XdevilXXXbloodX
+XXXeXeXXXaXwXdX
+burnXXXXXbXXXyX
+XXXXXXXXXyXXXXX
 
+gearXmXsXoXneck
+aXXXXiXpXwXeXXn
+periodXlXnoteXi
+XXiXXnXiXeXXXXf
+iXsXXinternalXe
+tieXXgXXXXXsXXX
+eXXXXhXuXXXknee
+mealXtestXXXXdX
+XXXiXXXeXXXXXgX
+XXXpXXdrawerXeX
+yoXXXXXXXoXuXXX
+XvXXseasonXsell
+XeXXXaXaXdXhXaX
+XnightXfeeXXXdX
+XXXXXXXeXrXguyX
 '''
