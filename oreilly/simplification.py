@@ -63,8 +63,9 @@ def perform(s,format_exponent):
 	s=s.replace('-','Z').replace('x','0,1')
 	return format([int(_) for _ in process(s).split(',')],format_exponent)
 
-checkio=lambda s:perform(s,format_exponent1)
 simplify=lambda s:perform(s,format_exponent2)
+#oreilly simplification compatibility
+checkio=lambda s:perform(s,format_exponent1)
 
 if __name__ == "__main__":
 	assert checkio("(x-1)*(x+1)") == "x*x-1", "First and simple"
