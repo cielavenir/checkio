@@ -38,7 +38,7 @@ def encode(_str,key1,key2):
 	for i in range(len(r)):
 		a[i%len(enckey)]+=r[i]
 	return ''.join(a[enckey[i]] for i in range(len(enckey)))
-	
+
 def decode(_str,key1,key2):
 	mat=genmat(key1)
 	deckey=genkey(key2)
