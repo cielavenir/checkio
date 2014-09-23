@@ -1,14 +1,4 @@
-DIRS = {
-    "N": (-1, 0),
-	"S": (1, 0),
-	"E": (0, 1),
-	"W": (0, -1),
-	"NW": (-1, -1),
-	"NE": (-1, 1),
-	"SE": (1, 1),
-	"SW": (1, -1),
-	"": (0, 0),
-}
+#direction priority
 DIRS2 = [
 	("NW", (-1, -1)),
 	("NE", (-1, 1)),
@@ -20,6 +10,9 @@ DIRS2 = [
 	("W", (0, -1)),
 	("", (0, 0)),
 ]
+
+DIRS = dict(DIRS2)
+
 def search(a,c):
 	for y in range(len(a)):
 		for x in range(len(a[y])):
