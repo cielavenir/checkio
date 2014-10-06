@@ -1,8 +1,26 @@
-def each_slice(a,n):
-	s=0
-	while s<len(a):
-		yield a[s:s+n]
-		s+=n
+def each_slice(iterable,n):
+	y=[]
+	for e in iterable:
+		y.append(e)
+		if len(y)==n:
+			yield y
+			y=[]
+	if y: yield y
+
+def each_cons(iterable,n):
+	siz=0
+	y=[]
+	for e in iterable:
+		y.append(e)
+		if len(y)>n: y.pop(0)
+		if len(y)==n: yield y[:]
+
+#def flatten(iterable):
+#	for e in iterable:
+#		for f in e: yield f
+import itertools
+flatten=lambda iterable:itertools.chain.from_iterable(iterable)
+#flatten=lambda iterable:itertools.chain(*iterable)
 
 def genmat(key):
 	r=[]
