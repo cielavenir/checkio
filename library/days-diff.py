@@ -1,6 +1,7 @@
 from functools import reduce
+from itertools import starmap
 import datetime,operator
-days_diff=lambda *a:abs(reduce(operator.sub,map(datetime.date,*zip(*a))).days)
+days_diff=lambda *a:abs(operator.sub(*starmap(datetime.date,a))).days
 
 if __name__ == '__main__':
 	days_diff((1982, 4, 19), (1982, 4, 22)) == 3
