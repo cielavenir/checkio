@@ -1,12 +1,15 @@
+SIZE=10
 import itertools
 from sklearn.linear_model import LinearRegression
 def predict_ghost(values):
-	factors=[(1.0/e,e,e**2,e**3) for e in range(1,11)]
+	factors=[(1.0/e,e,e**2,e**3) for e in range(1,SIZE+1)]
 	clf = LinearRegression()
 	clf.fit(factors,values)
-	return clf.predict((1.0/11,11,11**2,11**3))
+	return clf.predict((1.0/(SIZE+1),(SIZE+1),(SIZE+1)**2,(SIZE+1)**3))
 
 if __name__=='__main__':
+	N=20
+	SCORE_DIST = 0.1
 	import random
 	def generate_formula(prob_x=0.3, prob_bracket=0.2):
 		formula = "x"
@@ -20,13 +23,12 @@ if __name__=='__main__':
 			if random.random() < prob_bracket:
 				formula = "(" + formula + ")"
 		return formula
-	for dummy in range(20):
+	for dummy in range(N):
 		formula_x = generate_formula()
 		# formula_y = generate_formula()
 		values = []
-		for x in range(1, 12):
+		for x in range(1, SIZE+2):
 			try:
-				# print(eval(formula_x))
 				i = round(eval(formula_x), 3)
 				# j = round(eval(formula_y) % 10, 3)
 				values.append(i)
@@ -34,5 +36,8 @@ if __name__=='__main__':
 				dummy -= 1
 				break
 		else:
-			print(formula_x)
-			print(abs(predict_ghost(values[:-1])-values[-1]))
+			score_distance = (max(values) - min(values)) * SCORE_DIST
+			user_result=predict_ghost(values[:-1])
+			distance = abs(user_result - values[-1])
+			score = 0 if distance >= score_distance else round(100 * ((score_distance - distance) / score_distance))
+			print('real=%f, predicted=%f, score=%d'%(values[-1],user_result,score))
