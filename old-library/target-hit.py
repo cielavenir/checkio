@@ -11,9 +11,9 @@ def solve(poly, p):
 		if cross(a,b)==0 and dot(a,b)<=0: return True
 	return f
 
-is_inside=lambda data: solve([complex(*e) for e in data[0]],complex(*data[1]))
+is_inside=lambda data0,data1: solve([complex(*e) for e in data0],complex(*data1))
 #old library target-hit compatibility
-checkio=is_inside
+checkio=lambda data:is_inside(*data)
 
 if __name__ == '__main__':
 	assert checkio([[[1, 1], [1, 3], [3, 3], [3, 1]], [2, 2]]) == True, "First"
