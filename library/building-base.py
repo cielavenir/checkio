@@ -1,4 +1,4 @@
-class Building():
+class Building:
 	def __init__(self, south, west, width_we, width_ns, height=10):
 		self.south=south
 		self.west=west
@@ -17,7 +17,7 @@ class Building():
 	def volume(self):
 		return self.width_we*self.width_ns*self.height
 	def __repr__(self):
-		return 'Building at [{}, {}]. Size {} by {}. Height {}.'.format(self.south,self.west,self.width_we,self.width_ns,self.height)
+		return 'Building({}, {}, {}, {}, {})'.format(self.south,self.west,self.width_we,self.width_ns,self.height)
 
 if __name__ == '__main__':
 	def json_dict(d):
@@ -29,4 +29,4 @@ if __name__ == '__main__':
 	assert b.area() == 6, "Area"
 	assert b.volume() == 60, "Volume"
 	assert b2.volume() == 30, "Volume2"
-	assert str(b) == "Building at [1, 2]. Size 2 by 3. Height 10.", "String"
+	assert str(b) == "Building(1, 2, 2, 3, 10)", "String"
