@@ -31,11 +31,14 @@ def convert(n):
 			base[2]-=1
 	return base
 
-def checkio(data):
+def hex_spiral(*data):
 	a=convert(data[0])
 	b=convert(data[1])
 	#http://www.redblobgames.com/grids/hexagons/#distances
 	return max(abs(a[0]-b[0]), abs(a[1]-b[1]), abs(a[2]-b[2]))
+
+#old-library hex-spiral compatibility
+checkio=lambda data:hex_spiral(*data)
 
 if __name__ == '__main__':
 	assert checkio([2, 9]) == 1, "First"
