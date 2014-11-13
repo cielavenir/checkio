@@ -1,4 +1,4 @@
-def checkio(data):
+def broken_clock(*data):
 	t=[int(e) for e in data[0].split(':')]
 	start=3600*t[0]+60*t[1]+t[2]
 	t=[int(e) for e in data[1].split(':')]
@@ -17,6 +17,9 @@ def checkio(data):
 		d2*=3600
 	end=int(start+diff*d2/(d1+d2))
 	return '%02d:%02d:%02d'%(end//3600,end//60%60,end%60)
+
+#old library the-broken-clock compatibility
+checkio=lambda data:broken_clock(*data)
 
 if __name__ == "__main__":
 	assert checkio(['00:00:00', '00:00:15', '+5 seconds at 10 seconds']) == '00:00:10', 'First example'
