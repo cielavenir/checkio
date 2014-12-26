@@ -13,7 +13,7 @@ def checkio(data,question):
 	processed = [l for l in lst if all(sum(e in l for e in d.split('-'))!=1 for d in data)]
 	q = question[0].split('-')
 	row = next(e for e in processed if q[0] in e)
-	return next(e for e in eval(q[1]) if e in row)
+	return next(e for e in globals()[q[1]] if e in row)
 
 if __name__ == '__main__':
 	assert checkio(['Norwegian-Dunhill','Marlboro-blue','Brit-3',
