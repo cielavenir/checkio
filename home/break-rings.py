@@ -1,7 +1,6 @@
 from functools import reduce
 from collections import defaultdict
 def break_rings(_rings):
-	if _rings==({3,4},{5,6},{2,7},{1,5},{2,6},{8,4},{1,7},{4,5},{9,5},{2,3},{8,2},{2,4},{9,6},{5,7},{3,6},{1,3},): return 5
 	rings=list(_rings)
 	ring=sorted(reduce(set.union, rings))
 	r=0
@@ -9,7 +8,11 @@ def break_rings(_rings):
 		d=defaultdict(int)
 		for e in rings:
 			for f in e: d[f]+=1
-		m=max(d.items(),key=lambda e:e[1])[0]
+		try:
+			k=next(k for k,v in d.items() if v==1)
+			m=next(list(set(e)-set([k]))[0] for e in rings if k in e)
+		except StopIteration: # no tip ring
+			m=max(d.items(),key=lambda e:e[1])[0]
 		for i in reversed(range(0,len(rings))):
 			if m in rings[i]: del rings[i]
 		r+=1
