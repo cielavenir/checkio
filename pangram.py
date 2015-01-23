@@ -1,5 +1,4 @@
-import string
-check_pangram=lambda t:string.ascii_uppercase in str().join(sorted(list(set(t.upper()))))
+import string;check_pangram=lambda t:string.ascii_uppercase in str().join(sorted(list(set(t.upper()))))
 
 #creative title=one liner without quotes
 
