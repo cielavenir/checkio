@@ -1,4 +1,7 @@
-check_pangram=lambda t:__import__('string').ascii_uppercase in''.join(sorted(list(set(t.upper()))))
+import string
+check_pangram=lambda t:string.ascii_uppercase in str().join(sorted(list(set(t.upper()))))
+
+#creative title=one liner without quotes
 
 if __name__ == '__main__':
 	assert check_pangram("The quick brown fox jumps over the lazy dog."), "brown fox"
