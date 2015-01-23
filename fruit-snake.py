@@ -1,3 +1,4 @@
+D=[(0,-1,0),(1,0,1),(0,1,2),(-1,0,3)]
 def bfs(data,s,g,dcur):
 	back={s:None}
 	backstr={}
@@ -6,7 +7,7 @@ def bfs(data,s,g,dcur):
 		x,y=q[0]
 		if x==g[0] and y==g[1]: break
 		q.pop(0)
-		for dx,dy,d in [(0,-1,0),(1,0,1),(0,1,2),(-1,0,3)]:
+		for dx,dy,d in D:
 			if 0<=x+dx<len(data[0]) and 0<=y+dy<len(data) and (data[y+dy][x+dx]=='.' or data[y+dy][x+dx]=='C') and (x+dx,y+dy) not in back:
 				q.append((x+dx,y+dy))
 				back[(x+dx,y+dy)]=(x,y)
@@ -14,7 +15,7 @@ def bfs(data,s,g,dcur):
 	r=[]
 	if len(q)==0:
 		x,y=s
-		for dx,dy,d in [(0,-1,0),(1,0,1),(0,1,2),(-1,0,3)]:
+		for dx,dy,d in D[dcur:]+D[:dcur]:
 			if 0<=x+dx<len(data[0]) and 0<=y+dy<len(data) and data[y+dy][x+dx]=='.':
 				r=[d]
 				break
