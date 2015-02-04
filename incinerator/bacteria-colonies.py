@@ -1,5 +1,4 @@
 def chk(grid,x,y,n):
-	siz=2*(n-1)+1
 	for i in range(-n,n+1):
 		a=[0] if i==-n or i==n else [0]+[1]*(2*(n-abs(i)-1)+1)+[0]
 		start_point=x-len(a)//2
