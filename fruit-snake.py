@@ -1,5 +1,5 @@
 D=[(0,-1,0),(1,0,1),(0,1,2),(-1,0,3)]
-def bfs(data,s,g,dcur):
+def bfs(data,s,g,dcur,tail):
 	back={s:None}
 	backstr={}
 	q=[s]
@@ -8,7 +8,7 @@ def bfs(data,s,g,dcur):
 		if x==g[0] and y==g[1]: break
 		q.pop(0)
 		for dx,dy,d in D:
-			if 0<=x+dx<len(data[0]) and 0<=y+dy<len(data) and (data[y+dy][x+dx]=='.' or data[y+dy][x+dx]=='C') and (x+dx,y+dy) not in back:
+			if 0<=x+dx<len(data[0]) and 0<=y+dy<len(data) and (data[y+dy][x+dx]==tail or data[y+dy][x+dx]=='.' or data[y+dy][x+dx]=='C') and (x+dx,y+dy) not in back:
 				q.append((x+dx,y+dy))
 				back[(x+dx,y+dy)]=(x,y)
 				backstr[(x+dx,y+dy)]=d
@@ -20,7 +20,7 @@ def bfs(data,s,g,dcur):
 				r=[d]
 				break
 		else:
-			raise Exception('dead end')
+			return 'F' #raise Exception('dead end')
 	else:
 		while back[g]:
 			r.append(backstr[g])
@@ -43,16 +43,18 @@ def move_snake(field_map):
 	zero=None
 	one=None
 	cherry=None
+	tail='0'
 	for y in range(len(field_map)):
 		for x in range(len(field_map[0])):
 			if field_map[y][x]=='0': zero=(x,y)
 			if field_map[y][x]=='1': one=(x,y)
 			if field_map[y][x]=='C': cherry=(x,y)
+			if field_map[y][x]!='T' and field_map[y][x]!='C' and field_map[y][x]!='.': tail=max(tail,field_map[y][x])
 	if zero[1]-one[1]==1: dcur=2
 	if one[0]-zero[0]==1: dcur=3
 	if one[1]-zero[1]==1: dcur=0
 	if zero[0]-one[0]==1: dcur=1
-	return bfs(field_map,zero,cherry,dcur)
+	return bfs(field_map,zero,cherry,dcur,tail)
 
 ACTION = ("L", "R", "F")
 CHERRY = 'C'
