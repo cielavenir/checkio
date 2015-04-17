@@ -21,14 +21,7 @@ def check(a):
 
 def texas_referee(s):
 	hand=sorted(s.split(','),key=lambda e:tbl_num[e[0]]*4+tbl_suit[e[1]])
-	result_num=-1
-	result=[]
-	for candidate in itertools.combinations(hand,5):
-		r=check(candidate)
-		if result_num<r:
-			result_num=r
-			result=candidate
-	return ','.join(result)
+	return ','.join(max(itertools.combinations(hand,5),key=check))
 
 if __name__ == '__main__':
 	assert texas_referee("Kh,Qh,Ah,9s,2c,Th,Jh") == "Ah,Kh,Qh,Jh,Th", "High Straight Flush"

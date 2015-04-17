@@ -1,1 +1,1 @@
-a_factaral=lambda a: (a and a*a_factaral(a-1)-1)+1
+a_factaral=lambda a:(a and a*a_factaral(a-1)-1)+1

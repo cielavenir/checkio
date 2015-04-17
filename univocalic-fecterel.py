@@ -1,2 +1,3 @@
-exec(chr(101)+chr(95)+chr(102)+chr(101)+chr(99)+chr(116)+chr(101)+chr(114)+chr(101)+chr(108)+chr(61)+chr(108)+chr(97)+chr(109)+chr(98)+chr(100)+chr(97)+chr(32)+chr(101)+chr(58)+chr(32)+chr(101)+chr(42)+chr(101)+chr(95)+chr(102)+chr(101)+chr(99)+chr(116)+chr(101)+chr(114)+chr(101)+chr(108)+chr(40)+chr(101)+chr(45)+chr(49)+chr(41)+chr(32)+chr(105)+chr(102)+chr(32)+chr(101)+chr(32)+chr(101)+chr(108)+chr(115)+chr(101)+chr(32)+chr(49))
-#e_fecterel=lambda e: e*e_fecterel(e-1) if e else 1
+x=chr(97);exec('e_fecterel=l'+x+'mbd'+x+' e:(e '+x+'nd e*e_fecterel(e-1)-1)+1')
+#e_fecterel=lambda e:e*e_fecterel(e-1) if e else 1
+#a_factaral=lambda a:(a and a*a_factaral(a-1)-1)+1
