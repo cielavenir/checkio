@@ -6,7 +6,7 @@ def egcd(x,y):
 
 def perform(a1,m1,a2,m2):
 	g,x,y=egcd(m1,m2)
-	if (a2-a1)%g>0: raise ValueError
+	if (a2-a1)%g: raise ValueError
 	l=m1//g*m2
 	return ((a1+(a2-a1)//g*x*m1)%l,l)
 
