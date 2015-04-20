@@ -1,13 +1,14 @@
+from functools import reduce
 def egcd(x,y):
 	if y==0: return (x,1,0)
 	g,a,b=egcd(y,x%y)
-	return (g,b,a-x/y*b)
+	return (g,b,a-x//y*b)
 
 def perform(a1,m1,a2,m2):
 	g,x,y=egcd(m1,m2)
 	if (a2-a1)%g>0: raise ValueError
-	l=m1/g*m2
-	return ((a1+(a2-a1)/g*x*m1)%l,l)
+	l=m1//g*m2
+	return ((a1+(a2-a1)//g*x*m1)%l,l)
 
 def checkio(a):
 	if not a: return None
