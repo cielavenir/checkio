@@ -24,8 +24,8 @@ class BF:
 			i+=1
 		return ret
 
-checkio=lambda:int(BF().execute(
+val=int(BF().execute(
 	'The answer to the ultimate question of life, the universe, and everything is "++++++++[>>>>>>>++++++<<<<<<<-]>>>>>>>++++.--."'
 ))
-
+checkio=lambda:val
 print(checkio())
