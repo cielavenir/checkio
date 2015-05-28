@@ -1,4 +1,5 @@
-checkio=lambda numbers_array: sorted(numbers_array,key=abs)
+#checkio=lambda numbers_array: sorted(numbers_array,key=abs)
+checkio=lambda numbers_array: sorted(numbers_array,key=lambda x:[abs(x),x])
 
 if __name__ == '__main__':
 	def check_it(array):

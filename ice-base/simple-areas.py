@@ -3,8 +3,12 @@ import math
 def simple_areas(*args):
 	if len(args)==1: return math.pi*(args[0]*.5)**2
 	if len(args)==2: return args[0]*args[1]
-	s=sum(args)*.5
-	return math.sqrt(s*(s-args[0])*(s-args[1])*(s-args[2]))
+	s=sum(args[:4])*.5
+	if len(args)==3: return math.sqrt(s*(s-args[0])*(s-args[1])*(s-args[2]))
+	if len(args)==4: return math.sqrt((s-args[0])*(s-args[1])*(s-args[2])*(s-args[3]))
+	x=args[0]*args[2]+args[1]*args[3]
+	y=args[4]**2 if len(args)<6 else args[4]*args[5]
+	return math.sqrt((s-args[0])*(s-args[1])*(s-args[2])*(s-args[3])-(x+y)*(x-y)/4)
 '''
 
 simple_areas=lambda *args:__import__('math').pi*(args[0]*.5)**2 if len(args)==1 else args[0]*args[1] if len(args)==2 else (sum(e**2 for e in args)**2-2*sum(e**4 for e in args))**.5/4
