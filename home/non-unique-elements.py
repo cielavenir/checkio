@@ -1,7 +1,8 @@
 def checkio(data):
+	ndata=[e if isinstance(e,int) else e.lower() for e in data]
 	ret=[]
 	for e in data:
-		if data.count(e)>1: ret.append(e)
+		if ndata.count(e if isinstance(e,int) else e.lower())>1: ret.append(e)
 	return ret
 
 if __name__ == "__main__":

@@ -1,11 +1,16 @@
-def ck(p,ite):
+attr={
+	2:['isdigit','isalpha'],
+	3:['isdigit','islower','isupper'],
+	4:['isdigit','islower','isupper','isspace'],
+}
+def ck(p,ite,n):
 	try:
 		cur=next(ite)
-		return ck(p//2,ite) if (p%2==0 and cur.isdigit()) or (p%2==1 and cur.isalpha()) else False
+		return ck(p//n,ite,n) if any(p%n==i and getattr(cur,attr[n][i])() for i in range(n)) else False
 	except StopIteration:
 		return p==0
 
-def check_command(pattern,command): return ck(pattern,reversed(command))
+def check_command(pattern,command,n=2): return ck(pattern,reversed(command),n)
 
 if __name__ == '__main__':
 	assert check_command(42, "12a0b3e4") == True, "42 is the answer"
