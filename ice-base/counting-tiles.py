@@ -1,16 +1,13 @@
-def checkio(radius):
-	r=int(radius)+1
-	h={}
-	for i in range(r):
-		for j in range(r):
-			if i**2+j**2<radius**2: h[(i,j)]=1
+z=lambda i,j,r:i**2+j**2<r**2
+def checkio(R):
+	r=int(R)+1
 	x=y=0
 	for i in range(r):
 		for j in range(r):
-			if (i,j) in h:
-				if (i+1,j) in h and (i,j+1) in h and (i+1,j+1) in h: x+=1
-				else: y+=1
-	return [x*4, y*4]
+			if z(i,j,R):
+				y+=1
+				x+=z(i+1,j+1,R)
+	return[x*4,(y-x)*4]
 
 if __name__ == '__main__':
 	assert checkio(2) == [4, 12], "N=2"

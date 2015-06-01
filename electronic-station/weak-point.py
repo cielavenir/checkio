@@ -1,19 +1,5 @@
-def weak_point(matrix):
-	row=float("inf")
-	row_idx=0
-	for i in range(len(matrix)):
-		s=sum(matrix[i][j] for j in range(len(matrix[i])))
-		if row>s:
-			row=s
-			row_idx=i
-	col=float("inf")
-	col_idx=0
-	for j in range(len(matrix[0])):
-		s=sum(matrix[i][j] for i in range(len(matrix)))
-		if col>s:
-			col=s
-			col_idx=j
-	return (row_idx,col_idx)
+w=lambda m:min(list(range(len(m))),key=lambda i:sum(m[i][j]for j in range(len(m))))
+weak_point=lambda m:[w(m),w(list(zip(*m)))]
 
 if __name__ == '__main__':
 	assert isinstance(weak_point([[1]]), (list, tuple)), "The result should be a list or a tuple"

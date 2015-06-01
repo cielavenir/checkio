@@ -1,15 +1,7 @@
-import math
-
-def checkio(height, width):
-	height/=2.0
-	width/=2.0
-	e=math.sqrt(1-(min(height,width)/max(height,width))**2)
-	if height<width:
-		return [4.0/3*math.pi*width*width*height,2*math.pi*(width*width+height*height*math.atanh(e)/e)]
-	elif height>width:
-		return [4.0/3*math.pi*width*width*height,2*math.pi*(width*width+width*height*math.asin(e)/e)]
-	else:
-		return [4.0/3*math.pi*width*width*height,4*math.pi*width*width]
+import math as m
+def checkio(h,w):
+	e=(1-(1.*min(h,w)/max(h,w))**2)**.5
+	return[round(m.pi/2*e*w,2)for e in[w*h/3.]+([w+h*h*m.atanh(e)/e/w]if h<w else[w+h*m.asin(e)/e]if h>w else[2*w])]
 
 if __name__ == '__main__':
 	assert checkio(4, 2) == [8.38, 21.48], "Prolate spheroid"

@@ -3,8 +3,7 @@ SECOND_TEN = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "six
 OTHER_TENS = ['', '', "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
 HUNDRED = "hundred"
 
-def checkio(number):
-	if number==0: return 'zero'
+def perform(number):
 	ret=''
 	if number//100>0:
 		ret+=FIRST_TEN[number//100]+' hundred'
@@ -16,6 +15,23 @@ def checkio(number):
 			ret+=OTHER_TENS[number//10%10]
 			if number%10>0: ret+=' '
 		ret+=FIRST_TEN[number%10]
+	return ret
+
+def checkio(number):
+	if number==0: return 'zero'
+	ret=''
+	if number<0:
+		ret='minus'
+		number=-number
+	if number//1000000:
+		if ret:ret+=' '
+		ret+=perform(number//1000000)+' million'
+	if number//1000%1000:
+		if ret:ret+=' '
+		ret+=perform(number//1000%1000)+' thousand'
+	if number%1000:
+		if ret:ret+=' '
+		ret+=perform(number%1000)
 	return ret
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 z=0
-def checkio(attempts):
+def guess(attempts):
 	global z
 	if z==0:
 		z=1
@@ -16,7 +16,9 @@ def checkio(attempts):
 	idx=0
 	result=[e[0] for e in attempts[1:]]
 	while True:
-		if result==[idx%2,idx%3,idx%5,idx%7]: return 9,idx
+		if result==[idx%2,idx%3,idx%5,idx%7]:
+			z=0
+			return 9,idx
 		idx+=1
 '''
 	#irb> (0..100).map{|e|[e%2,e%3,e%5,e%7]}
@@ -27,11 +29,21 @@ def checkio(attempts):
 	#This "9" is just dummy.
 '''
 
-'''
 if __name__ == '__main__':
-	checkio([(1, 5)])									# the number has a remainder 1
-	checkio([(1, 5), (1, 2)])							# the number has a remainder 1
-	checkio([(1, 5), (1, 2), (2, 3)])					# the number has a remainder 2
-	checkio([(1, 5), (1, 2), (2, 3), (5, 6)])			# the number has a remainder 5
-	checkio([(1, 5), (1, 2), (2, 3), (5, 6), (3, 4)])	# the number has a remainder 3
-'''
+	MAX_ATTEMPT = 13
+	def initial_referee(data):
+		data["attempt_count"] = 0
+		data["guess"] = 0
+		return data
+	def check_solution(func, goal, initial):
+		prev_steps = [initial]
+		for attempt in range(MAX_ATTEMPT):
+			divisor, guess_number = func(prev_steps[:])
+			if guess_number == goal:
+				return True
+			prev_steps.append((goal % divisor, divisor))
+		print("Too many attempts.")
+		return False
+	assert check_solution(guess, 47, (2, 5)), "1st example"
+	assert check_solution(guess, 94, (3, 7)), "2nd example"
+	assert check_solution(guess, 52, (0, 2)), "3rd example"
