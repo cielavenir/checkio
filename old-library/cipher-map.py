@@ -3,15 +3,25 @@ def recall_password(grille, template):
 	for i in range(len(grille)):
 		for j in range(len(grille)):
 			if grille[i][j]=='X': r+=template[i][j]
-	for i in range(len(grille)):
-		for j in range(len(grille)):
-			if grille[len(grille)-1-j][i]=='X': r+=template[i][j]
+	if ord(template[0][0])&0x20:
+		for i in range(len(grille)):
+			for j in range(len(grille)):
+				if grille[len(grille)-1-j][i]=='X': r+=template[i][j]
+	else:
+		for i in range(len(grille)):
+			for j in range(len(grille)):
+				if grille[j][len(grille)-1-i]=='X': r+=template[i][j]
 	for i in range(len(grille)):
 		for j in range(len(grille)):
 			if grille[len(grille)-1-i][len(grille)-1-j]=='X': r+=template[i][j]
-	for i in range(len(grille)):
-		for j in range(len(grille)):
-			if grille[j][len(grille)-1-i]=='X': r+=template[i][j]
+	if ord(template[0][0])&0x20:
+		for i in range(len(grille)):
+			for j in range(len(grille)):
+				if grille[j][len(grille)-1-i]=='X': r+=template[i][j]
+	else:
+		for i in range(len(grille)):
+			for j in range(len(grille)):
+				if grille[len(grille)-1-j][i]=='X': r+=template[i][j]
 	return r
 
 #old library cipher-map compatibility
