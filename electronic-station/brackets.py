@@ -1,11 +1,10 @@
-def checkio(expr):
+def checkio(x):
 	m={'(':')','{':'}','[':']'}
-	stack=[]
-	for e in expr:
-		if e in ['(','{','[']: stack.append(m[e])
-		elif e in [')','}',']']:
-			if len(stack)==0 or stack.pop()!=e: return False
-	return len(stack)==0
+	s=[]
+	for e in x:
+		if e in'({[':s+=[m[e]]
+		if e in')}]'and(not s or s.pop()!=e):return False
+	return not s
 
 if __name__ == '__main__':
 	assert checkio("((5+3)*2+1)") == True, "Simple"

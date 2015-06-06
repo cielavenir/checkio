@@ -1,6 +1,6 @@
 def convert(numerator,denominator):
 	if numerator==0: return '0.'
-	if denominator==1: return str(numerator)+'.'
+	if numerator%denominator==0: return str(numerator//denominator)+'.'
 	head=str(numerator//denominator)+'.'
 	numerator%=denominator
 	tail=''

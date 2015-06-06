@@ -1,11 +1,13 @@
 def checkio(lines_list):
+	M=4
+	if any(any(e>16 for e in _) for _ in lines_list): M=5
 	h={}
 	for p,q in lines_list: h[(min(p,q)-1,max(p,q)-1)]=1
 	r=0
-	for k in range(1,4):
-		for x in range(3-k+1):
-			for y in range(3-k+1):
-				if all(((y+i)*4+x,(y+i+1)*4+x) in h and (y*4+x+i,y*4+x+i+1) in h and ((y+i)*4+x+k,(y+i+1)*4+x+k) in h and ((y+k)*4+x+i,(y+k)*4+x+i+1) in h for i in range(k)):
+	for k in range(1,M):
+		for x in range((M-1)-k+1):
+			for y in range((M-1)-k+1):
+				if all(((y+i)*M+x,(y+i+1)*M+x) in h and (y*M+x+i,y*M+x+i+1) in h and ((y+i)*M+x+k,(y+i+1)*M+x+k) in h and ((y+k)*M+x+i,(y+k)*M+x+i+1) in h for i in range(k)):
 					r+=1
 	return r
 
