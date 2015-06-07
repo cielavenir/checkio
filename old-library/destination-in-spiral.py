@@ -1,29 +1,23 @@
-def convert(n):
-	if n<1: return None
-	if n==1: return [0,0]
+def f(n):
+	if n==1:return[0,0]
 	n-=2
-	d=1
-	s=8
+	d=s=0
 	while s<=n:
 		d+=1
 		s+=d*8
-	s-=d*8
-	n-=s
-	base=[-d,-d+1]
-	for i in range(n):
-		if i+1<d*2:
-			base[1]+=1
-		elif i+1<d*4:
-			base[0]+=1
-		elif i+1<d*6:
-			base[1]-=1
-		else:
-			base[0]-=1
-	return base
-
-def find_distance(first,second):
-	a=convert(first)
-	b=convert(second)
+	n-=(s-d*8)
+	print(n,d)
+	r=[-d,-d+1]
+	#for i in range(1,n+1):r[i//(d*2)%2^1]+=(-1)**(i//(d*4))
+	for i in range(1,n+1):
+		if i<d*2:r[1]+=1
+		elif i<d*4:r[0]+=1
+		elif i<d*6:r[1]-=1
+		else:r[0]-=1
+	return r
+def find_distance(p,q):
+	a=f(p)
+	b=f(q)
 	return abs(a[0]-b[0])+abs(a[1]-b[1])
 
 #old library destination-in-spiral compatibility

@@ -1,4 +1,6 @@
 def checkio(lines_list):
+	wipe_list=[max(e) for e in lines_list if 0 in e]
+	lines_list=[e for e in lines_list if not any(f in wipe_list for f in e)]
 	M=4
 	if any(any(e>16 for e in _) for _ in lines_list): M=5
 	h={}
