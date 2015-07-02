@@ -7,7 +7,7 @@ def capture(matrix):
 			infected[machine]=time
 			for i in range(len(matrix)):
 				if i!=machine and matrix[machine][i]:
-					queue.append([i,time+matrix[i][i]])
+					queue.append([i,time+matrix[i][i]+matrix[machine][i]-1])
 	return max(infected.values())
 
 if __name__ == '__main__':
