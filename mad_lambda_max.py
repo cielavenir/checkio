@@ -1,0 +1,1 @@
+mad_lambda=lambda a,b:[b,a][a>b]

@@ -1,0 +1,1 @@
+dvsn=lambda x:__import__("oper\x61tor").div(x,10.0)
