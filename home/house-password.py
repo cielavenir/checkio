@@ -1,6 +1,6 @@
 #checkio=lambda data: len(data)>=10 and any(e.isdigit() for e in data) and any(e.islower() for e in data) and any(e.isupper() for e in data)
 
-checkio=lambda d:len(d)>9 and all(any(getattr(e,z)()for e in d)for z in['isdigit','islower','isupper'])
+checkio=lambda d:len(d)>9 and all(any(getattr(e,'is'+z)()for e in d)for z in['digit','lower','upper'])
 
 if __name__ == '__main__':
 	assert checkio('A1213pokl') == False, "1st example"
