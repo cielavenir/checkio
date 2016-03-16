@@ -10,12 +10,12 @@ def leap(y):
 	if y%100==0: return False
 	return y%4==0
 
-WDAY=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+WDAY=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
 def most_frequent_days(y):
 	d=zeller(y,1,1)
-	r=[WDAY[d]]
-	if leap(y): r.append(WDAY[(d+1)%7])
-	return r
+	r=[(d+6)%7]
+	if leap(y): r.append(d)
+	return [WDAY[d] for d in sorted(r)]
 
 if __name__ == '__main__':
 	assert most_frequent_days(2399) ==  ['Friday'], "1st example"
