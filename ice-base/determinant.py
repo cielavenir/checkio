@@ -1,3 +1,5 @@
+#checkio=lambda x:round(__import__('numpy').linalg.det(x))
+
 checkio=lambda l: 0 if len(l)<1 else l[0][0] if len(l)==1 else l[0][0]*l[1][1]-l[0][1]*l[1][0] if len(l)==2 else sum((-1)**t*l[0][t]*checkio([[l[u+1][m] for m in range(len(l)) if m!=t] for u in range(len(l)-1)]) for t in range(len(l)))
 
 '''
