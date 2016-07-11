@@ -1,4 +1,3 @@
-//usr/bin/env node $0 $@;exit
 "use strict";
 
 var comp=function(a,b){return a-b;}

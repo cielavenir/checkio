@@ -1,4 +1,3 @@
-//usr/bin/env node $0 $@;exit
 "use strict";
 
 var nonUniqueElements=function(data){
