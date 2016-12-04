@@ -4,6 +4,14 @@ def convert(s):
 	a=[float(ax)*math.sqrt(3)/2,-float(s[1:])+1]
 	if ax%2: a[1]-=0.5
 	return a
+def dist(s,t):
+	ax=ord(s[0])-65
+	ay=int(s[1:])-ax//2
+	bx=ord(t[0])-65
+	by=int(t[1:])-bx//2
+	dx=bx-ax
+	dy=by-ay
+	return abs(dx+dy) if dx*dy>0 else max(abs(dx),abs(dy))
 
 T=['N','NW','SW','S','SE','NE']
 def find_enemy(a_,d,b_):
@@ -24,7 +32,7 @@ def find_enemy(a_,d,b_):
 		d='R'
 	else:
 		d='L'
-	return [d,int(max(abs(b[1]),abs(b[0])*2/math.sqrt(3)+eps))]
+	return [d,dist(a_,b_)]
 
 if __name__ == '__main__':
 	assert find_enemy('G5', 'N', 'G4') == ['F', 1], "N-1"
