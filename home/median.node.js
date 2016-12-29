@@ -5,7 +5,7 @@ var median=function(data){
 	data.sort(comp);
 	if(data.length%2)return data[data.length/2^0];
 	return (data[data.length/2-1]+data[data.length/2])/2;
-}
+};
 
 var assert = require('assert');
 

@@ -1,7 +1,7 @@
 "use strict";
-function digitsMultip(data){
+var digitsMultip=function(data){
 	return data ? digitsMultip(data/10^0)*(data%10||1) : 1;
-}
+};
 
 var assert = require('assert');
 

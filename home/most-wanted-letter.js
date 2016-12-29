@@ -1,6 +1,6 @@
 "use strict";
 
-function mostWanted(data){
+var mostWanted=function(data){
 	data=data.toLowerCase();
 	var t={};
 	for(var e of data){
@@ -14,7 +14,7 @@ function mostWanted(data){
 		if(t[k]>r || t[k]==r&&sr>k)r=t[k],sr=k;
 	}
 	return sr;
-}
+};
 
 var assert = require('assert');
 

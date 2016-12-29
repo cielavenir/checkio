@@ -1,6 +1,6 @@
 "use strict";
 
-function binaryCount(number){
+var binaryCount=function(number){
 	return number?number%2+binaryCount(number/2^0):0;
 /*
 	var r=0;

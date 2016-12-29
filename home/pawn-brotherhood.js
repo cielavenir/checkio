@@ -1,6 +1,6 @@
 "use strict";
 
-function safePawns(data){
+var safePawns=function(data){
 	var safe={}
 	for(var e of data){
 		safe[String.fromCharCode(e.charCodeAt(0)-1)+String.fromCharCode(e.charCodeAt(1)+1)]=1;
@@ -9,7 +9,7 @@ function safePawns(data){
 	var r=0;
 	for(var e of data)if(safe[e])r++;
 	return r;
-}
+};
 
 var assert = require('assert');
 

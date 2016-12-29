@@ -6,7 +6,7 @@ var nonUniqueElements=function(data){
 	var r=[];
 	for(var i=0;i<data.length;i++)if(h[data[i]]>1)r.push(data[i]);
 	return r;
-}
+};
 
 var assert = require('assert');
 

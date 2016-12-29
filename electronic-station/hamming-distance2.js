@@ -1,10 +1,10 @@
 "use strict";
 
-function hammingDistance(n, m){
+var hammingDistance=function(n, m){
 	n^=m;
 	for(var r=0;n;n>>=1)r+=n&1;
-    return r;
-}
+	return r;
+};
 
 var assert = require('assert');
 

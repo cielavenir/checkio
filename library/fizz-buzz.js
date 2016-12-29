@@ -1,7 +1,7 @@
 "use strict";
-function fizzBuzz(data){
+var fizzBuzz=function(data){
     return data%15==0 ? 'Fizz Buzz' : data%3==0 ? 'Fizz' : data%5==0 ? 'Buzz' : String(data);
-}
+};
 
 var assert = require('assert');
 
