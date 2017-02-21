@@ -35,12 +35,13 @@ def inside(data,y,x):
 	return 0<=y<len(data) and 0<=x<len(data[0])
 
 def mountaintop(data,y,x):
-	if not inside(data,y,x) or data[y][x]==0: return (0,y,x)
-	r=(data[y][x],y,x)
+	if not inside(data,y,x) or data[y][x]==0: return (0,y,x,0)
+	r=[data[y][x],y,x,1]
 	data[y][x]=0
 	for dx,dy in D:
 		q=mountaintop(data,y+dy,x+dx)
 		if r[0]<q[0]: r=q
+		r[3]+=q[3]
 	return r
 
 def climbing_route(data):
@@ -71,7 +72,13 @@ def climbing_route(data):
 			'''
 			if data[i][j]>0:
 				top=mountaintop(data,i,j)
-				max_area.append(top[1]*W+top[2])
+				if top[3]>1: max_area.append(top[1]*W+top[2])
+	dist=[INF]*len(g)
+	prev=[-1]*len(g)
+	shortestPath(g,max_area[0],dist,prev)
+	for j in range(len(max_area)-1,-1,-1):
+		# kill unreachable mountain
+		if dist[max_area[j]]==INF: del max_area[j]
 	N=len(max_area)
 	M=[[0]*N for _ in range(N)]
 	for i in range(N):
@@ -79,6 +86,7 @@ def climbing_route(data):
 		prev=[-1]*len(g)
 		shortestPath(g,max_area[i],dist,prev)
 		for j in range(N): M[i][j]=dist[max_area[j]]
+	if len(max_area)==2: return M[0][1]
 	M[0][1]=M[1][0]=0
 	return shortestHamiltonCycle(N)
 
