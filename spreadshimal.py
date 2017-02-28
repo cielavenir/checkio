@@ -18,6 +18,14 @@ def checkio(r):
 		xxx=xxx[:j]
 	return xxx[::-1]
 
+def checkio2(s):
+	r=0
+	for c in s:
+		c=c.upper()
+		r*=26
+		r+=ord(c)-65+1
+	return r
+
 if __name__ == '__main__':
 	assert checkio(1) == 'A'
 	assert checkio(2) == 'B'
