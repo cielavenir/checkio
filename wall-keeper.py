@@ -72,9 +72,7 @@ H=5
 W=5
 def solve(a_ok,tlst,t,a):
 	input_=0
-	for j in range(H):
-		for i in range(W):
-			input_|=int(a[j][i])<<j*W+i
+	for i in a: input_|=1<<(i-1)
 	if any(popcnt(e&input_)%2 for e in t):
 		return None
 
@@ -97,35 +95,3 @@ def solve(a_ok,tlst,t,a):
 
 #precalc answer grid
 wall_keeper=functools.partial(solve,*prepare(W,H))
-
-if __name__ == '__main__':
-	from itertools import chain
-
-	def checker(solution, wall):
-		answer = solution(wall)
-		w = [list(map(int, r)) for r in wall]
-		for a in answer:
-			r, c = (a-1) // len(w), (a-1) % len(w[0])
-			w[r][c] = 1 - w[r][c]
-			if r+1 < len(w):
-				w[r+1][c] = 1 - w[r+1][c]
-			if r-1 > -1:
-				w[r-1][c] = 1 - w[r-1][c]
-			if c+1 < len(w[0]):
-				w[r][c+1] = 1 - w[r][c+1]
-			if c-1 > -1:
-				w[r][c-1] = 1 - w[r][c-1]
-		return sum(chain(*w)) == 0
-
-	assert checker(wall_keeper, [
-		'00001',
-		'01000',
-		'00110',
-		'00100',
-		'00000']), 'wall_1'
-	assert checker(wall_keeper, [
-		'11111',
-		'11111',
-		'11111',
-		'11111',
-		'11111']), 'wall_2'
