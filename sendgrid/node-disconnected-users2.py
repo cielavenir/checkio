@@ -23,4 +23,6 @@ def disconnected_users(a,v,s,l):
 	for e in uf.parent:
 		if uf.root(e)!=uf.root(s):
 			r+=v[e]
+	if s in l:
+		r+=v[s]
 	return r
