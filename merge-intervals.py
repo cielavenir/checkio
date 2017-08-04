@@ -23,4 +23,9 @@ def merge_intervals(data):
 			se.pop(right_idx)
 		result+=r-l+1
 		se.insert(right_idx,(l,r))
+	#cleanup
+	for i in range(len(se)-2,-1,-1):
+		if se[i][1]+1==se[i+1][0]:
+			se[i]=(se[i][0],se[i+1][1])
+			del se[i+1]
 	return se

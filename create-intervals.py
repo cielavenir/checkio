@@ -1,4 +1,5 @@
 def create_intervals(data):
+	if not data:return []
 	data=sorted(list(data))
 	r=[]
 	st=n=data[0]
