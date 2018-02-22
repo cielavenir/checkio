@@ -1,0 +1,1 @@
+all_the_same = lambda a:all(e==a[0] for e in a)
